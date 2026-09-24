@@ -1,0 +1,20 @@
+{
+  "variable": "gdp_pc_ppp",
+  "source": "World Bank WDI",
+  "indicator": "NY.GDP.PCAP.PP.KD",
+  "description": "GDP per capita, PPP (constant 2017 intl $)",
+  "download_date": "2026-09-12T20:30:01.029915",
+  "status": "success",
+  "countries": [
+    "USA",
+    "CHN",
+    "TWN",
+    "KOR",
+    "JPN",
+    "DEU",
+    "GBR",
+    "ISR",
+    "FRA"
+  ],
+  "years": "2000-2024"
+}

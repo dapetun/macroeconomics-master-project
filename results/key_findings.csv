@@ -1,0 +1,19 @@
+variable,estimate_or_value,note
+GERD_CHN_USA_ratio_2010,0.62,core_panel
+GERD_CHN_USA_ratio_2023,0.75,core_panel
+Researchers_CHN_USA_ratio_2010,0.25,per-million basis
+Researchers_CHN_USA_ratio_2022,~0.38,USA 2023 missing
+Articles_CHN_USA_ratio_2023,2.17,volume not impact; crossover ~2020
+Patents_CHN_USA_ratio_2021,5.44,resident counts not quality
+MVA_level_ratio_CHN_USA,~2.4-2.6,shares of GDP
+Hitech_gap_pp_2010_vs_2023,9.5 to 4.7,broad basket
+TFP_CHN_2010_to_2023,0.395 to 0.471,USA=1 by construction
+IC_exports_CHN_USA_ratio_2010_to_2023,0.79 to 3.13,nominal USD; CHN 2015-17 missing
+M1_beta_GERD_lag1,0.0275,"SE 0.0143, CI [-0.0005,0.0554], p=0.059, n=84"
+M1_theta_logResearchers,0.0563,"SE 0.0043, CI [0.048,0.065], p<0.001 (t inflated by autocorrelation)"
+M2_gamma_PC1,-0.118,"artefact of scale mixing; DO NOT USE"
+PCA_PC1_varexp_4var,0.699,"loadings g+0.55 b+0.53 res+0.53 art-0.36 -> incoherent"
+Event_semi_USA_pre_post_pct,-1.9,"2020-21 vs 2022-23; not causal"
+Event_semi_CHN_pre_post_pct,+7.2,not causal; 2023 downturn both
+Event_hitech_USA_pp,+1.5,not causal
+Event_hitech_CHN_pp,-3.6,not causal

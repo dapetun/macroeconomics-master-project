@@ -1,0 +1,20 @@
+{
+  "variable": "patents_resident_origin",
+  "source": "WIPO IP Statistics",
+  "indicator": "Patents",
+  "description": "Patent applications (resident and origin)",
+  "download_date": "2026-09-12T20:31:41.059281",
+  "status": "failed",
+  "countries": [
+    "USA",
+    "CHN",
+    "TWN",
+    "KOR",
+    "JPN",
+    "DEU",
+    "GBR",
+    "ISR",
+    "FRA"
+  ],
+  "years": "2000-2024"
+}

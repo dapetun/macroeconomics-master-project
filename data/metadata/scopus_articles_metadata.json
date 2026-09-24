@@ -1,0 +1,20 @@
+{
+  "variable": "scopus_articles",
+  "source": "World Bank WDI",
+  "indicator": "IP.JRN.ARTC.SC",
+  "description": "Scientific and technical journal articles",
+  "download_date": "2026-09-12T20:30:16.310029",
+  "status": "success",
+  "countries": [
+    "USA",
+    "CHN",
+    "TWN",
+    "KOR",
+    "JPN",
+    "DEU",
+    "GBR",
+    "ISR",
+    "FRA"
+  ],
+  "years": "2000-2024"
+}

@@ -1,0 +1,8 @@
+source,url,access_or_download_date,local_artifact,freshness_status,method_or_scope
+World Bank WDI,https://api.worldbank.org/v2/,2026-09-12,core raw files,fresh as downloaded; provider vintage not independently archived,WDI country-series API
+OECD MSTI,https://sdmx.oecd.org/public/rest/v1/data/DSD_MSTI@DF_MSTI,2026-09-13,oecd_berd_pct_gdp.csv,freshness verified by stored extraction date,"annual SDMX, measure B / % GDP"
+Penn World Table,https://raw.githubusercontent.com/open-numbers/ddf--pwt--penn_world_table/,2026-09-13,pwt_ctfp.csv,mirror provenance; version must be rechecked before publication,country-year CSV mirror
+UN Comtrade,https://comtradeplus.un.org/,2026-09-13,comtrade_hs8542_exports.csv,2023 latest retained in raw,HS8542 export responses; multi-record rows quarantined
+TOP500,https://www.top500.org/lists/top500/,2026-09-13,hpc_top500_systems.csv,not collected: KeyError: 'Rmax (TFlop/s)',November annual snapshot
+Stanford AI Index,https://hai.stanford.edu/ai-index/2025-ai-index-report,2026-09-13,not downloaded,"source identified, no audited raw extract",do not use until raw export is archived
+EPO-OECD quantum,https://www.oecd.org/en/publications/mapping-the-global-quantum-ecosystem_010c37da-en.html,2026-09-13,not downloaded,"source identified, no audited country-year raw extract",do not chart-digitise without review

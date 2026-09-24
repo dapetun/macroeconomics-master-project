@@ -1,0 +1,12 @@
+variable,label,tci_block,unit,source,source_series,effective_period,comparability_status
+gerd_pct_gdp,R&D expenditure (% GDP),RD,% GDP,World Bank WDI (UNESCO-derived),GB.XPD.RSDV.GD.ZS,2000-2023 effective (2024 missing),VALID WITH CAVEAT
+researchers_per_million,Researchers in R&D,HC,per million people,World Bank WDI / UNESCO UIS,SP.POP.SCIE.RD.P6,"2000-2023 eff.; ISR none, GBR to 2017, USA to 2022",VALID WITH CAVEAT
+scopus_articles,S&E journal articles (fractional-count volume),S,count (fractional),World Bank WDI (NSF-derived),IP.JRN.ARTC.SC,2000-2023 effective,VALID WITH CAVEAT
+patents_resident,Resident patent applications AT national office (office basis),INN,count,World Bank WDI / WIPO,IP.PAT.RESD,2000-2021 effective,VALID WITH CAVEAT
+patents_total_office,Total (resident+nonresident) applications at office,INN,count,WDI/WIPO office files (reviewed sum),IP.PAT.RESD+IP.PAT.NRES,2000-2021 effective,VALID WITH CAVEAT (reviewed)
+mva_pct_gdp,Manufacturing value added,PRD,"% GDP (share, not scale)",World Bank WDI,NV.IND.MANF.ZS,"2000-2021 balanced; CHN from 2004, USA to 2021",VALID WITH CAVEAT
+hitech_export_share,High-tech exports (broad basket),ADE,% manufactured exports,World Bank WDI / UN Comtrade,TX.VAL.TECH.MF.ZS,2007-2024 effective; use 2010+ with break caveat,VALID WITH CAVEAT
+gdp_pc_ppp,"GDP per capita, PPP (constant 2017 intl-$; single vintage)",Macro,constant intl $,World Bank WDI,NY.GDP.PCAP.PP.KD,2000-2024 (2024 preliminary),VALID WITH CAVEAT
+tfp_ctfp,TFP level relative to contemporaneous USA (=1),Productivity,index (USA=1/yr),PWT mirror,ctfp,2000-2023; USA constant,"VALID WITH CAVEAT, RESTRICTED"
+berd_pct_gdp,BERD PERFORMED (% GDP; not business-financed),FIN,% GDP,OECD MSTI,P_BERPCT,2000-2024,VALID WITH CAVEAT
+semi_exports_hs8542,"Integrated-circuit exports, nominal USD (HS8542, mixed revisions)",ADE/PRD,current USD,UN Comtrade (one-record retained),HS 8542,2010-2023 window; 75 kept,"VALID WITH CAVEAT, INCOMPLETE"

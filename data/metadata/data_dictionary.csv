@@ -1,0 +1,20 @@
+variable,label,tci_block,unit,source,source_series,intended_period,comparability_status
+gerd_pct_gdp,R&D expenditure (% GDP),RD,% GDP,World Bank WDI,GB.XPD.RSDV.GD.ZS,2000-2024,VALID WITH CAVEAT
+researchers_per_million,Researchers in R&D (GBR ends 2017; USA ends 2022; ISR missing),HC,per million people,World Bank WDI / UNESCO UIS,SP.POP.SCIE.RD.P6,2000-2024,VALID WITH CAVEAT
+scopus_articles,S&E journal articles (fractional-count volume),S,count (fractional),World Bank WDI,IP.JRN.ARTC.SC,2000-2024,VALID WITH CAVEAT
+patents_resident,Resident patent applications AT national office (office basis),INN,count,World Bank WDI / WIPO,IP.PAT.RESD,2000-2021,VALID WITH CAVEAT
+patents_total_office,Total (resident+nonresident) applications at office,INN,count,WDI/WIPO (resident+nonresident),IP.PAT.RESD+IP.PAT.NRES,2000-2021,VALID WITH CAVEAT
+mva_pct_gdp,Manufacturing value added (% GDP share),PRD,% GDP,World Bank WDI,NV.IND.MANF.ZS,2000-2024,VALID WITH CAVEAT
+hitech_export_share,High-tech exports (broad basket),ADE,% manufactured exports,World Bank WDI / UN Comtrade,TX.VAL.TECH.MF.ZS,2000-2024,VALID WITH CAVEAT
+gdp_pc_ppp,"GDP per capita, PPP constant",Macro,constant international $,World Bank WDI,NY.GDP.PCAP.PP.KD,2000-2024,VALID WITH CAVEAT
+tfp_ctfp,TFP at constant PPPs (USA=1 each year by construction),Productivity,index,Penn World Table mirror,ctfp,2000-2023,VALID WITH CAVEAT
+berd_pct_gdp,BERD PERFORMED (% GDP; not business-financed / not finance mix),FIN,% GDP,OECD MSTI,P_BERPCT,2000-2024,VALID WITH CAVEAT
+semi_exports_hs8542,Integrated-circuit exports (nominal USD; mixed HS revisions),ADE/PRD,current USD,UN Comtrade,HS 8542,2010-2023,VALID WITH CAVEAT
+hpc_top500_systems,TOP500 systems (not extracted to panel),PRD,count,TOP500,November list,2010-2024,MISSING
+hpc_top500_rmax_tflops,TOP500 aggregate Rmax (not extracted to panel),PRD,TFlop/s,TOP500,November list,2010-2024,MISSING
+ai_publications_count,AI publications,S/INN,count,Stanford AI Index,publication metric,2010-2024,MISSING
+ai_citations_impact,AI citation impact,S/INN,index/count,Stanford AI Index,impact metric,2010-2024,MISSING
+ai_private_investment_usd_bn,AI private investment,FIN/COM,USD billions,Stanford AI Index,private investment,2013-2024,MISSING
+ai_notable_models,Notable AI models,INN/COM,count,Stanford AI Index,notable models,snapshot,MISSING
+quantum_ipf_count,Quantum international patent families,S/INN,fractional families,EPO-OECD,quantum IPF,2005-2024,MISSING
+quantum_publications,Quantum publications,S,count,EPO-OECD,publication metric,partial,MISSING

@@ -1,0 +1,5 @@
+var,country,window_t0,window_t1,v0,v1,CAGR,peak_year,peak_value,note
+scopus_articles,USA,2010,2021,407405.92,471378.18,0.013346744,2021,471378.18,dual-window canon; neither window sole
+scopus_articles,CHN,2010,2021,307848.3,756203.38,0.085130846,,,
+scopus_articles,USA,2010,2023,407405.92,430843.27,0.004311912,2021,471378.18,USA decline 2021-2023 lowers CAGR vs 2010-2021
+scopus_articles,CHN,2010,2023,307848.3,932711.93,0.089009323,,,

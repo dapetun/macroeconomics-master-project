@@ -1,0 +1,8 @@
+{
+  "variable": "patents_nonresident",
+  "source": "World Bank WDI (WIPO origin)",
+  "indicator": "IP.PAT.NRES",
+  "description": "Patent applications, nonresidents",
+  "download_date": "2026-09-12T20:33:29.517833",
+  "status": "success"
+}

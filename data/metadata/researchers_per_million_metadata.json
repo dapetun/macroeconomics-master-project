@@ -1,0 +1,8 @@
+{
+  "variable": "researchers_per_million",
+  "source": "World Bank WDI (UNESCO-UIS origin)",
+  "indicator": "SP.POP.SCIE.RD.P6",
+  "description": "Researchers in R&D per million people",
+  "download_date": "2026-09-12T20:33:16.611552",
+  "status": "success"
+}

@@ -1,0 +1,20 @@
+{
+  "variable": "berd_pct_gdp",
+  "source": "OECD MSTI",
+  "indicator": "BERD_PCT_GDP",
+  "description": "BERD_PCT_GDP as % of GDP",
+  "download_date": "2026-09-12T20:30:38.655749",
+  "status": "failed",
+  "countries": [
+    "USA",
+    "CHN",
+    "TWN",
+    "KOR",
+    "JPN",
+    "DEU",
+    "GBR",
+    "ISR",
+    "FRA"
+  ],
+  "years": "2000-2024"
+}

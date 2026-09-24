@@ -1,0 +1,20 @@
+{
+  "variable": "mva_pct_gdp",
+  "source": "World Bank WDI",
+  "indicator": "NV.IND.MANF.ZS",
+  "description": "Manufacturing, value added (% of GDP)",
+  "download_date": "2026-09-12T20:30:19.562440",
+  "status": "success",
+  "countries": [
+    "USA",
+    "CHN",
+    "TWN",
+    "KOR",
+    "JPN",
+    "DEU",
+    "GBR",
+    "ISR",
+    "FRA"
+  ],
+  "years": "2000-2024"
+}

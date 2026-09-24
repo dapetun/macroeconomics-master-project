@@ -1,0 +1,7 @@
+country_iso3,year,list_month,indicator,value,unit,source,page_or_figure,notes
+USA,2015,2015-11,top500_systems_count,199,count,TOP500 List Highlights November 2015,https://new.top500.org/lists/top500/2015/11/highlights/,"HPC Linpack systems on list; not cloud AI compute"
+CHN,2015,2015-11,top500_systems_count,109,count,TOP500 List Highlights November 2015,https://new.top500.org/lists/top500/2015/11/highlights/,"HPC Linpack systems on list; not cloud AI compute"
+USA,2025,2025-11,top500_systems_count,171,count,TOP500 / Network World summary of Nov 2025 list; Visual Capitalist table citing TOP500,https://www.networkworld.com/article/4096893/el-capitan-extends-its-supercomputer-lead-top-10-lineup-unchanged.html,"Nov 2025; USA down 2 vs June; not cloud AI compute"
+CHN,2025,2025-11,top500_systems_count,40,count,TOP500 / Network World summary of Nov 2025 list; Visual Capitalist table citing TOP500,https://www.networkworld.com/article/4096893/el-capitan-extends-its-supercomputer-lead-top-10-lineup-unchanged.html,"Nov 2025; China down 6 vs June; tied with Germany at 40"
+JPN,2025,2025-11,top500_systems_count,43,count,Visual Capitalist ranked countries citing TOP500 Nov 2025,https://www.visualcapitalist.com/ranked-countries-most-supercomputers/,"Comparator; second after USA"
+DEU,2025,2025-11,top500_systems_count,40,count,Visual Capitalist ranked countries citing TOP500 Nov 2025,https://www.visualcapitalist.com/ranked-countries-most-supercomputers/,"Comparator; tied with China"
