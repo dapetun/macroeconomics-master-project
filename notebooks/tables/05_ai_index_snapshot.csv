@@ -1,0 +1,11 @@
+country_iso3,year,indicator,value,unit,source,page_or_figure,notes
+CHN,2023,ai_publications_share_of_world,23.2,percent of AI CS pubs,Stanford HAI AI Index Report 2025 Chapter 1,Figure 1.1.6 / highlight p.2,English-language AI pubs in OpenAlex CS; volume share not impact
+USA,2023,ai_publications_share_of_world,9.2,percent of AI CS pubs,Stanford HAI AI Index Report 2025 Chapter 1,Figure 1.1.6,Same definition; USA below China on volume share
+CHN,2023,ai_citations_share_of_world,22.6,percent of AI CS citations,Stanford HAI AI Index Report 2025 Chapter 1,Figure 1.1.7 / highlight,Citation share; still volume-adjacent; USA leads top-100 cited separately
+USA,2023,ai_citations_share_of_world,13.0,percent of AI CS citations,Stanford HAI AI Index Report 2025 Chapter 1,Figure 1.1.7,Citation share
+USA,2024,ai_private_investment_usd_bn,109.1,USD billion,Stanford HAI AI Index Report 2025 Economy chapter / highlights,Highlight 3 / Economy ch.,Private investment; CN opaque risk remains; not finance-mix of GERD
+CHN,2024,ai_private_investment_usd_bn,9.3,USD billion,Stanford HAI AI Index Report 2025 Economy chapter / highlights,Highlight 3 / Economy ch.,Private investment; ~12x USA/China gap in report text
+USA,2024,ai_notable_models_count,40.0,count,Stanford HAI AI Index Report 2025 Chapter 1,Figure 1.3.1 / highlight 4,Institution affiliation of notable models; COM thin proxy
+CHN,2024,ai_notable_models_count,15.0,count,Stanford HAI AI Index Report 2025 Chapter 1,Figure 1.3.1 / highlight 4,Same definition; not deployment/adoption
+CHN,2023,ai_patents_share_of_world_grants,69.7,percent of AI patent grants,Stanford HAI AI Index Report 2025 Chapter 1,Figure 1.2.3,Patent grants share; quantity not quality
+USA,2023,ai_patents_share_of_world_grants,14.2,percent of AI patent grants,Stanford HAI AI Index Report 2025 Chapter 1,Figure 1.2.3,Patent grants share

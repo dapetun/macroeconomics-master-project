@@ -1,41 +1,41 @@
 # APPROVED METHOD SET
 
-**Дата утверждения:** 2026-09-20; **refresh:** 2026-09-22 (абсолюты + snapshot + radar)  
-**Статус:** **APPROVED** (решения автора по плану Cover original theme)  
+**Дата утверждения:** 2026-09-20; **refresh:** 2026-09-24 (ветка `report-20pp`, 20-страничный отчёт)  
+**Статус:** **APPROVED**  
 **Target State:** A — честная измеримая карта + тонкие tech-snapshots  
-**Авторитет чисел:** `data_reviewed/tables_reviewed/*` (Level 1 + absolutes); `data/raw/snapshots/*` (exploratory); `regression_results_final.csv` (M1 appendix only)
+**Авторитет чисел:** `data_reviewed/tables_reviewed/*` (Level 1 + absolutes); `data/raw/snapshots/*` (exploratory); `regression_results_final.csv` (M1 appendix only); пересчёт в `notebooks/`
 
 ---
 
 ```text
-APPROVED METHODS
+APPROVED METHODS — 20-page report core
 
-Core:
-- Joint-year snapshot + ratios (год на каждой цифре; запрет ratio с NaN-стороной)
-- Common-window CAGR с явными (start, end, n); для articles — ОБА окна 2010–2021 и 2010–2023 + пик USA 2021
+Core (methods 1–5, 9, 12, 18):
+- 1 Joint-year levels + ratios (год на каждой цифре; запрет ratio с NaN-стороной)
+- 2 Common-window CAGR с явными (start, end, n)
+- 3 Articles: ОБА окна CAGR 2010–2021 и 2010–2023 + пик USA 2021; crossover 2016–2017
+- 4 Separate OLS trend lines per country (articles = a + b × year)
+- 5 Pooled two-country OLS with year × China interaction (d = slope difference)
 - Dual-scale table: intensity vs volume/share + АБСОЛЮТНЫЙ GERD PPP и headcount researchers
-- TCI occupancy 8×4: measured / snapshot / ? / qual — НЕ индекс-тест H1
-- Графики F1–F7 + FIXED F8/F9; нейтральные заголовки
-- Паутинная (radar) min–max по измеримым MACRO-блокам (8 стран панели; не 4 tech; не capability index)
-- Semis: HS8542 + semi_status + ≠fab; TWN = qual hole
-- Allow-list языка; карта ограничений данных как часть ответа
-- Статьи crossover: 2016–2017 (не «~2020»)
+- 9 PCA intensity-only (GERD%, BERD%, researchers/mn): variance share + loadings; NOT capability index
+- 12 Within-country correlations — descriptive association only
+- 18 Point snapshots: TOP500, Stanford AI Index, EPO–OECD quantum
+- Semis caveat: HS8542 ≠ fab; TWN = qual hole (½ page max)
+- Allow-list языка
+- Графики F1–F7 + FIXED F8/F9 + F12; нейтральные заголовки
 
-Optional (не в докладе / не ответ на RQ):
-- M1 TWFE: appendix only; cluster CI для GERD включает 0
-- PCA repair (a) intensity-only: appendix only; M2 не запускать
-- Naive OLS slopes без p как теста
-- Within-country correlations — дескриптивно
+Appendix only:
+- 14 / M1 TWFE: cluster CI для GERD включает 0; не ответ на RQ
 - Fragility table M1 — as-is
 
-Narrow snapshot exception (НЕ reopen State B full panel):
-- TOP500: 1–2 момента времени (systems count; optional Rmax sum) → status snapshot
-- Stanford AI Index: 2–3 числа (pubs / private $ / notable models) → snapshot
-- EPO–OECD quantum: 1–2 числа (IPF; optional pubs) → snapshot
-- Каждая строка CSV: country, year, indicator, value, unit, source, page/figure
+NOT in report (removed 2026-09-24):
+- Method 8 equal-weight z-index
+- Method 11 hierarchical / k-means clustering
+- Method 13 first-difference regression
+- Radar F11 (was illustration for method 8)
 
 Not approved:
-- Старый PCA/M2/F10 как evidence
+- Старый PCA/M2/F10 как evidence (кроме intensity PCA repair как method 9)
 - Conversion ratios / ranking конверсии
 - Pooled correlations как inference
 - Event CHIPS/BIS как эффект
@@ -50,7 +50,7 @@ Not approved:
 
 ## Covering RQ (exact wording)
 
-> Как по сопоставимым показателям 2010–2023 годов различаются пути США и Китая вдоль цепочки «наука → кадры → исследования → финансирование → инновации → коммерциализация → производство → масштабирование → внедрение → экспорт → экономический эффект» — и что из этой цепочки для искусственного интеллекта, полупроводников, суперкомпьютеров и квантовых технологий можно показать только снимком или качественно?
+> Как по сопоставимым показателям 2010–2023 годов различаются пути США и Китая вдоль цепочки от науки до экспорта, если смотреть отдельно интенсивность (доля в ВВП, исследователи на миллион) и объём (абсолютные расходы, численность, статьи, патенты, доли производства и экспорта)? Что по искусственному интеллекту, суперкомпьютерам и квантовым технологиям показывают доступные точечные снимки на конкретные годы?
 
 Технические окна данных — в `DATA_CANON.md` / `RQ_FREEZE.md` (спецификация, не обложка).
 
@@ -68,7 +68,7 @@ Not approved:
 
 ### D2 — Missingness / thin coverage
 
-Ряды без panel = `?`; точечные внешние выписки = `snapshot` (exploratory); TWN foundry = `qual`. Не «неизмеримо в принципе».
+Ряды без panel = `?`; точечные внешние выписки = `snapshot` (exploratory); TWN foundry = `qual`. Не «неизмеримо в принципе». В 20-страничном отчёте D2 **не** центр сюжета (максимум ½ страницы occupancy).
 
 ---
 
@@ -82,18 +82,27 @@ Not approved:
 
 ---
 
-## Radar (macro blocks only)
+## Method 4 vs method 5
 
-- Блоки: выбираются из измеримых macro (напр. GERD%, researchers/mn, articles, patents_resident, MVA%, hitech%, GDP pc, TFP).
-- Нормализация: **min–max по 8 странам панели** в joint year (не USA–CN only → 0/1).
-- Подпись: «иллюстрация измеримых макроблоков», **не** capability / conversion index / H1 test.
-- Tech snapshots **не** входят в radar.
+- **Method 4:** две отдельные прямые (США отдельно, Китай отдельно). Сравнение наклонов — глазами.
+- **Method 5:** одна регрессия `y = a + b·year + c·China + d·(year×China)`. Коэффициент `d` — насколько наклон Китая отличается от наклона США. Если доверительный интервал для `d` не содержит ноль, разница наклонов в этой спецификации статистически отличима от нуля. Это **описание двух прямых**, не каузальный эффект политики.
+
+Рекомендуемые ряды для 4+5: `scopus_articles` и `gerd_pct_gdp` (не больше двух рядов в основном тексте).
 
 ---
 
-## TWFE / PCA (без изменений роли)
+## PCA (method 9)
 
-M1 и PCA repair (a) — **appendix only**, не в narrative arc доклада. Числа: `regression_results_final.csv`, `PCA_REPAIR_PASS.md`. M2 не запускать.
+Intensity-only: `gerd_pct_gdp`, `berd_pct_gdp`, `researchers_per_million`.  
+Ссылка на ремонт: `results/pca_repair_a_intensity_*.csv`, ~90.7% на первой компоненте.  
+Язык: «сжатие сонаправленных рядов интенсивности», **не** «индекс способностей / технологической мощи».
+
+---
+
+## M1 / TWFE (method 14, appendix)
+
+M1 — **appendix only**, не в narrative arc. Числа: `regression_results_final.csv`, `M1_INTERPRETATION.md`.  
+Честная фраза: при кластерных стандартных ошибках доверительный интервал коэффициента GERD включает ноль. USA TFP = 1 by construction (PWT `ctfp`).
 
 ---
 
@@ -101,7 +110,7 @@ M1 и PCA repair (a) — **appendix only**, не в narrative arc доклада
 
 - TWN: qualitative hole; **NO** panel expansion; FRA ≠ foundry substitute.
 - Allow-list: «ассоциировано», «условная корреляция», «дескриптивно», «неотличимо от нуля», «не измерено в этой работе», «снимок / exploratory».
-- Запрещено: winner; «США превращают / Китай масштабирует» как механизм; causal verbs; leadership без measured/snapshot evidence; «неизмеримо в принципе».
+- Запрещено: winner; «США превращают / Китай масштабирует» как механизм; causal verbs; leadership без measured/snapshot evidence; «неизмеримо в принципе»; SUPPORTED.
 
 ---
 
@@ -113,8 +122,10 @@ M1 и PCA repair (a) — **appendix only**, не в narrative arc доклада
 | Full State B panel pull | **CLOSED** |
 | Point snapshots TOP500/AI/quantum | **ALLOWED** (CSV + ledger; exploratory) |
 | H1–H6 | Archived / not tested |
-| M1 / PCA | Appendix; не доклад |
-| Radar | Core illustration (macro only) |
-| 4 tech | One occupancy matrix + thin cards |
+| Methods 1–5, 9, 12, 18 | **Core report** |
+| Methods 8, 11, 13 | **Removed** |
+| M1 (14) | Appendix only |
+| Radar F11 | Not in report |
+| Notebooks | `notebooks/01` … `05` on branch `report-20pp` |
 
 *Конец APPROVED_METHOD_SET.md.*
