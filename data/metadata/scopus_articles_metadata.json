@@ -1,20 +1,12 @@
 {
   "variable": "scopus_articles",
-  "source": "World Bank WDI",
-  "indicator": "IP.JRN.ARTC.SC",
-  "description": "Scientific and technical journal articles",
-  "download_date": "2026-09-12T20:30:16.310029",
+  "source_primary": "NSF NCSES State of U.S. Science and Engineering 2026, Figure 29",
+  "source_url": "https://ncses.nsf.gov/pubs/nsbsep20261/discovery-r-d-activity-and-research-publications-2",
+  "source_fallback": "World Bank WDI IP.JRN.ARTC.SC (pre-2014; KOR/ISR/FRA)",
+  "description": "Scientific and engineering journal articles, Scopus fractional count",
+  "refresh_date": "2026-09-24",
   "status": "success",
-  "countries": [
-    "USA",
-    "CHN",
-    "TWN",
-    "KOR",
-    "JPN",
-    "DEU",
-    "GBR",
-    "ISR",
-    "FRA"
-  ],
-  "years": "2000-2024"
+  "countries_nsf_2014_2024": ["USA", "CHN", "DEU", "GBR", "JPN"],
+  "years_nsf": "2014-2024",
+  "notes": "Crossover USA->CHN in 2017; peak USA 2021=472375; 2024 USA=439892 CHN=1078580"
 }

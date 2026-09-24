@@ -63,13 +63,15 @@ World IPF total ~9740 (EPO press 2025-12-17). Commercialisation / macro effect: 
 
 ---
 
-## Articles crossover (macro panel — fix)
+## Articles crossover + 2024 levels (NSF Indicators 2026)
 
 | Claim | Correct | Incorrect |
 |-------|---------|-----------|
-| Year CHN overtakes USA on Scopus article **volume** | **2017** first year CHN>USA; last USA>CHN = **2016** | «кроссовер ~2020» |
+| Year CHN overtakes USA on S&E article **volume** | **2017** first year CHN>USA; last USA≥CHN = **2016** | «кроссовер ~2020» |
+| 2024 levels (NSF Fig. 29) | USA **439 892**; CHN **1 078 580** | цитировать только WB-2023 как «последний год» |
+| Peak USA | **2021** = 472 375 (NSF) | |
 
-Source: `core_panel_reviewed.csv`; F3.
+Source: NSF *State of U.S. S&E 2026* Fig. 29 → `data/raw/nsf_se_articles_indicators2026.csv`; panel refresh 2026-09-24.
 
 ---
 

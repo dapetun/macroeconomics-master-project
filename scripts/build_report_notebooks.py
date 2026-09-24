@@ -53,7 +53,7 @@ OUT_FIG.mkdir(parents=True, exist_ok=True)
 OUT_TAB.mkdir(parents=True, exist_ok=True)
 
 panel = pd.read_csv(PANEL_PATH)
-panel = panel[(panel["year"] >= 2010) & (panel["year"] <= 2023)].copy()
+panel = panel[(panel["year"] >= 2010) & (panel["year"] <= 2024)].copy()
 US_CN = panel[panel["country_iso3"].isin(["USA", "CHN"])].copy()
 
 def cagr(start: float, end: float, n_years: int) -> float:
@@ -141,19 +141,23 @@ cagr_tbl.head(20)
             """
 ## Метод 3. Два окна для статей и год пересечения
 
-- CAGR статей считается **дважды**: 2010–2021 (пик США) и 2010–2023 (полный горизонт анализа).
+- CAGR статей считается **дважды**: 2010–2021 (пик США) и 2010–2024 (полный актуальный горизонт).
 - Пересечение объёма статей: последний год, когда США ≥ Китая — **2016**; первый год, когда Китай > США — **2017**. Формулировка «около 2020» **неверна**.
+- Ряд 2014–2024 для США/Китая: **NSF Indicators 2026**, Figure 29 (Scopus, дробный подсчёт). К 2024 Китай ≈2.45× США по объёму.
 """
         ),
         code(
             r'''
 arts = US_CN[["country_iso3", "year", "scopus_articles"]].dropna().sort_values(["year", "country_iso3"])
-wide = arts.pivot(index="year", columns="country_iso3", values="scopus_articles")
+wide = arts.pivot(index="year", columns="country_iso3", values="scopus_articles").dropna()
 wide["CHN_gt_USA"] = wide["CHN"] > wide["USA"]
 crossover_years = wide.loc[wide["CHN_gt_USA"]].index.min()
 last_usa_lead = wide.loc[~wide["CHN_gt_USA"]].index.max()
 print("last year USA >= CHN:", int(last_usa_lead))
 print("first year CHN > USA:", int(crossover_years))
+if 2024 in wide.index:
+    print("2024 USA/CHN:", float(wide.loc[2024, "USA"]), float(wide.loc[2024, "CHN"]),
+          "ratio", float(wide.loc[2024, "CHN"] / wide.loc[2024, "USA"]))
 
 dual_art = pd.read_csv(TABLES / "articles_cagr_dual_window.csv")
 dual_art.to_csv(OUT_TAB / "01_articles_cagr_dual_window.csv", index=False)
@@ -163,9 +167,9 @@ for iso, color in [("USA", "#1f77b4"), ("CHN", "#d62728")]:
     s = arts[arts["country_iso3"] == iso]
     ax.plot(s["year"], s["scopus_articles"], marker="o", label=iso, color=color)
 ax.axvline(2016.5, color="gray", linestyle="--", linewidth=1, label="пересечение 2016→2017")
-ax.set_title("Число статей Scopus: США и Китай, 2010–2023")
+ax.set_title("S&E статьи (NSF/Scopus): США и Китай, 2010–2024")
 ax.set_xlabel("Год")
-ax.set_ylabel("Число статей")
+ax.set_ylabel("Число статей (дробный подсчёт)")
 ax.legend()
 ax.grid(True, alpha=0.3)
 fig.tight_layout()
@@ -178,7 +182,7 @@ dual_art
             """
 ## Краткий вывод для отчёта (метод 1–3)
 
-По таблице dual-scale при выбранных шкалах: США выше по **интенсивности** (GERD%, BERD%, исследователи на млн), Китай выше по **объёму/доле** (статьи, патенты, MVA%, hitech%, абсолютный GERD PPP, оценка численности исследователей). Это арифметика шкал, а не вердикт «победитель». Пересечение статей — 2016–2017.
+По таблице dual-scale при выбранных шкалах: США выше по **интенсивности** (GERD%, BERD%, исследователи на млн), Китай выше по **объёму/доле** (статьи, патенты, MVA%, hitech%, абсолютный GERD PPP, оценка численности исследователей). Это арифметика шкал, а не вердикт «победитель». Пересечение статей — 2016–2017; к 2024 разрыв по объёму статей вырос примерно до 2.45× (NSF 2026).
 """
         ),
     ]
@@ -209,7 +213,7 @@ def build_02() -> None:
         code(BOOT + "\nimport statsmodels.formula.api as smf"),
         code(
             r'''
-def fit_separate_slopes(df: pd.DataFrame, ycol: str, year0: int = 2010, year1: int = 2023):
+def fit_separate_slopes(df: pd.DataFrame, ycol: str, year0: int = 2010, year1: int = 2024):
     """Method 4: OLS y ~ year separately for USA and CHN."""
     rows = []
     fig, ax = plt.subplots(figsize=(8, 4.5))
@@ -244,7 +248,7 @@ def fit_separate_slopes(df: pd.DataFrame, ycol: str, year0: int = 2010, year1: i
     return pd.DataFrame(rows)
 
 
-def fit_interaction(df: pd.DataFrame, ycol: str, year0: int = 2010, year1: int = 2023):
+def fit_interaction(df: pd.DataFrame, ycol: str, year0: int = 2010, year1: int = 2024):
     """Method 5: y ~ year + China + year:China."""
     sub = df[(df["country_iso3"].isin(["USA", "CHN"])) & (df["year"] >= year0) & (df["year"] <= year1)][
         ["country_iso3", "year", ycol]
@@ -275,8 +279,8 @@ def fit_interaction(df: pd.DataFrame, ycol: str, year0: int = 2010, year1: int =
         md("## Статьи Scopus"),
         code(
             r'''
-sep_art = fit_separate_slopes(US_CN, "scopus_articles")
-int_art, _ = fit_interaction(US_CN, "scopus_articles")
+sep_art = fit_separate_slopes(US_CN, "scopus_articles", year0=2010, year1=2024)
+int_art, _ = fit_interaction(US_CN, "scopus_articles", year0=2010, year1=2024)
 sep_art
 '''
         ),
@@ -284,8 +288,8 @@ sep_art
         md("## GERD в процентах ВВП"),
         code(
             r'''
-sep_gerd = fit_separate_slopes(US_CN, "gerd_pct_gdp")
-int_gerd, _ = fit_interaction(US_CN, "gerd_pct_gdp")
+sep_gerd = fit_separate_slopes(US_CN, "gerd_pct_gdp", year0=2010, year1=2023)
+int_gerd, _ = fit_interaction(US_CN, "gerd_pct_gdp", year0=2010, year1=2023)
 sep_gerd
 '''
         ),

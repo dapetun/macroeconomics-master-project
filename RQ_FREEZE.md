@@ -15,7 +15,7 @@
 
 ### Техническая спецификация окон (не обложка)
 
-Фактические окна данных (цитировать рядом с цифрой): GERD/BERD/статьи/GDP/TFP 2010–2023; researchers joint 2022 / common 2010–2017; патенты 2010–2021; MVA joint 2021 / common 2010–2021; hitech 2010–2023; HS8542 с разрывами; абсолютный GERD PPP и headcount researchers — joint-year по наличию обоих рядов.
+Фактические окна данных (цитировать рядом с цифрой): GERD% / TFP 2010–2023; BERD / статьи / hitech 2010–2024 (статьи 2014–2024 — NSF Indicators 2026); researchers joint 2022 / common 2010–2017; патенты 2010–2021; MVA joint 2021 / common 2010–2021; HS8542 joint 2023; абсолютный GERD PPP joint 2024; headcount researchers joint 2022.
 
 **Не отвечаем:** широкий causal RQ из `research_design.md` §A; tech-зависимость H1; H2/H3/H5/H6 как preregistered тесты; каузальный механизм «организация → конверсия»; overall winner.
 

@@ -1,10 +1,10 @@
 # DATA CANON — канон данных и подписей
 
-**Дата:** 2026-09-20; **refresh:** 2026-09-22 (абсолюты + snapshots + articles crossover)  
+**Дата:** 2026-09-20; **refresh:** 2026-09-24 (NSF Indicators 2026 articles → 2024; hitech/BERD joint 2024)  
 **Агент:** DataCanonAgent / ScopeKeeper refresh  
 **Статус:** Binding для QuantitativeAgent / TechMatrixAgent / SynthesisAgent  
 **Панель:** 8 стран — USA, CHN, KOR, JPN, DEU, GBR, ISR, **FRA** (не TWN) × 2000–2024  
-**Авторитетные значения:** `data_reviewed/*` (esp. `core_panel_reviewed.csv`, `tables_reviewed/*`); snapshots в `data/raw/snapshots/`
+**Авторитетные значения:** `data_reviewed/*`; snapshots в `data/raw/snapshots/`; статьи 2014–2024 (USA/CHN/DEU/GBR/JPN) — `data/raw/nsf_se_articles_indicators2026.csv`
 
 ---
 
@@ -12,45 +12,50 @@
 
 | Факт | Значение |
 |------|----------|
-| Последний год USA > CHN по `scopus_articles` | **2016** (USA 431 808; CHN 430 350) |
-| Первый год CHN > USA | **2017** (USA 435 377; CHN 464 154) |
+| Последний год USA ≥ CHN по `scopus_articles` | **2016** (NSF 2026: USA 431 848; CHN 429 614) |
+| Первый год CHN > USA | **2017** (NSF 2026: USA 435 539; CHN 463 411) |
+| Уровни **2024** | USA **439 892**; CHN **1 078 580** (≈2.45×) |
+| Пик USA | **2021** = **472 375** (NSF) |
 | **Запрещено** | формулировка «кроссовер ~2020» |
 
-Источник: `data_reviewed/core_panel_reviewed.csv`; график F3.
+Источник: NSF *State of U.S. Science and Engineering 2026*, Figure 29 (Scopus fractional count; accessed Aug 2025). Вшито в панель для USA/CHN/DEU/GBR/JPN на 2014–2024. До 2014 и страны KOR/ISR/FRA — прежний World Bank WDI vintage.
 
 ---
 
 ## 1. Articles CAGR — dual-window + peak (канон)
 
 **Ни одно окно само по себе не является единственным каноническим числом.**  
-Оба окна арифметически верны; разница USA объясняется пиком 2021 и спадом 2021→2023.
+Разница USA объясняется пиком 2021 и спадом после него.
 
 | Window | USA CAGR | CHN CAGR | Источник |
 |--------|----------|----------|----------|
-| **2010–2021** | **1.33%/yr** | **8.51%/yr** | `core_panel_reviewed.csv` (endpoint CAGR) |
-| **2010–2023** | **0.43%/yr** | **8.90%/yr** | то же + `descriptive_cagr_common_window.csv` |
-
-**Пик USA:** 2021, `scopus_articles` = 471 378 (далее 2022: 447 539; 2023: 430 843).
+| **2010–2021** | **~1.35%/yr** | **~8.58%/yr** | `articles_cagr_dual_window.csv` |
+| **2010–2024** | **~0.55%/yr** | **~9.37%/yr** | то же |
 
 Канон-CSV: `data_reviewed/tables_reviewed/articles_cagr_dual_window.csv`.
 
-**Правило цитирования:** всегда указывать окно `(t0,t1)` рядом с числом; при сравнении US–CN growth допустимо показывать **оба** окна или явно выбрать одно с обоснованием (пик / полный горизонт анализа).
+**Правило цитирования:** всегда указывать окно `(t0,t1)` рядом с числом.
 
 ---
 
 ## 2. Joint-year labels (snapshot)
 
-Срезы уровней — только по **latest jointly available year** на переменную (не «все в 2023»).
+Срезы уровней — только по **latest jointly available year** на переменную (не «все в 2024»).
 
 | Variable | Joint year | Канон-таблица |
 |----------|------------|---------------|
-| GERD, BERD, articles, hitech, GDP pc, TFP, semi (retained) | **2023** | `descriptive_snapshot_latest_joint.csv` |
+| GERD % GDP, TFP | **2023** | `descriptive_snapshot_latest_joint.csv` |
+| BERD %, articles, hitech, GDP pc | **2024** | то же |
 | researchers_per_million | **2022** | то же (USA 2023 n/a) |
-| patents_resident **и** patents_total_office | **2021** | то же (пара обязательна) |
-| mva_pct_gdp | **2021** | то же (USA 2022–23 n/a) |
+| patents_resident **и** patents_total_office | **2021** | то же (WB новее не отдаёт) |
+| mva_pct_gdp | **2021** | то же (USA 2022–24 n/a) |
+| HS8542 | **2023** | mutual USA–CHN |
 
-Common-window CAGR (balanced endpoints): researchers **2010–2017**; patents **2010–2021**; MVA **2010–2021**; остальные core (кроме semi caveats) **2010–2023** — см. `descriptive_cagr_common_window.csv`.
+Common-window CAGR: researchers **2010–2017**; patents/MVA **2010–2021**; articles dual **2010–2021** и **2010–2024**; GERD% **2010–2023**; BERD/hitech **2010–2024**.
 
+### 2b. Freshness rule (2026-09-24)
+
+Не требовать единый календарный 2025/2026. Брать последний сопоставимый joint-year по показателю. Не смешивать винтажи без пометки. Не добивать дыры (патенты после 2021; HS8542 без пары CHN после 2023).
 ---
 
 ## 3. BERD = PERFORMED % GDP
