@@ -1,0 +1,18 @@
+{
+  "source": "UN Comtrade preview API",
+  "base": "https://comtradeapi.un.org/public/v1/preview/C/A/HS",
+  "download_date": "2026-09-25",
+  "files": {
+    "comtrade_world_flows.csv": 2582,
+    "comtrade_china_partners.csv": 2788,
+    "comtrade_taiwan_mirror.csv": 602
+  },
+  "sha256": {
+    "world": "9f25456af7b6a13e9f7e82501a693252f42d7884f46da95da54c8189e2d5cb39",
+    "china": "ac5a9af58f6d2b7fde7a1fe56541853bcf3370fba5355e56d7ca4bd7d6fcfd59",
+    "taiwan": "1d2d44726074bf7f9e55b72a12b244e69cf7b838043175a4b8d9ad0f400b4a97"
+  },
+  "checks_2023_chn": {
+    "note": "expect IC imports ~350.1bn, exports ~136.3bn"
+  }
+}

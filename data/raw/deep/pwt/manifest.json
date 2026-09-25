@@ -1,0 +1,17 @@
+{
+  "source": "open-numbers PWT mirror",
+  "base_url": "https://raw.githubusercontent.com/open-numbers/ddf--pwt--penn_world_table/master/",
+  "download_date": "2026-09-25",
+  "n_rows": 7488,
+  "sha256": "6d79c7f0de583eb63979db7d6f0dbd744824687da756dadb551fe5ed044d1486",
+  "variables": [
+    "rtfpna",
+    "ctfp",
+    "rgdpna",
+    "rnna",
+    "emp",
+    "hc",
+    "labsh",
+    "pop"
+  ]
+}

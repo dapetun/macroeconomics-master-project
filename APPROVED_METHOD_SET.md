@@ -1,5 +1,8 @@
 # APPROVED METHOD SET
 
+
+> **На ветке deep-research** методы задаёт DEEP_RESEARCH_PLAN.md / DEEP_RQ_AND_HYPOTHESES.md.
+
 **Дата утверждения:** 2026-09-20; **refresh:** 2026-09-24 (ветка `report-20pp`, 20-страничный отчёт)  
 **Статус:** **APPROVED**  
 **Target State:** A — честная измеримая карта + тонкие tech-snapshots  

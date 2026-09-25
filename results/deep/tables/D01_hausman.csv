@@ -1,0 +1,2 @@
+beta_fe,beta_re,var_fe,var_re,hausman_stat,note
+-0.04976246140746525,-0.11317826550511424,0.05168204578378348,0.013793837577496712,0.10614289774421423,prefer FE if Hausman large; theory also favors FE (R&D correlated with country effects)

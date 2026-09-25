@@ -1,0 +1,8 @@
+H,prediction,result,verdict,evidence,type
+H1,CHN scale metrics above norm more than intensity; USA intensity above norm,CHN above norm on all six metrics; patents extreme (+811%); rd_gdp also +91%. USA near/below norm on intensity.,частично не согласуется / смешанно,D02_profile_2019_2023.csv,описательное
+H2,b>0 for ln patents on ln R&D lag,"beta≈0.995, p≈0.002, N=734, G=39; holds in several robustness specs",согласуется,D03_all_specs.csv,ассоциативное
+H3,beta3 = R&D×gap > 0,"beta3≈-0.45, p≈0.54; not significant across main robustness",не согласуется / неопределённо,D04_main.csv / D04_robustness.csv,ассоциативное
+H4,CHN TFP share of growth < USA,Early periods CHN TFP share higher (e.g. 2001-07: 0.47 vs 0.29); 2020-23 CHN lower (0.30 vs 0.42),частично не согласуется,D05_tfp_share.csv,описательное (учёт)
+H5,CHN net IC importer; TW/KR sources; equipment NLD/JPN/USA,CHN ic_net<0 in 100% of 2010-2023 years; partner sum matches world M,согласуется (торговля),D06_ic_trade_panel.csv,описательное
+H6,CHN TOP500 share rises then falls after ~2019,systems share 0.08(2010)→0.46(2019)→0.08(2025); missing some list years,согласуется (при неполных списках),D07_shares.csv,описательное
+H7,Chinese notable models more often open,"LPM is_chn beta≈0.25, p≈0.009; weakens if drop top-3 CN open orgs",согласуется (хрупко к составу организаций),D08_lpm.csv,ассоциативное

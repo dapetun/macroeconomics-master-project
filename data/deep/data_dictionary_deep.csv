@@ -1,0 +1,13 @@
+name,meaning,source,unit,transform,limitation
+country_iso3,ISO3 country code,panel,code,identity,OECD+CHN
+year,Calendar year,panel,year,identity,2000-2023
+rd_gdp,GERD % GDP,World Bank / OECD fill,%,level,CHE often biennial
+rd_ppp,GERD USD PPP constant-like,OECD (+deflator if needed),mln USD PPP,level,Constructed rd_ppp = (rd_gdp/100)*gdppc_ppp*pop (OECD absolute only n=200 cells; see DEEP_DEVIATIONS)
+researchers_pm,Researchers per million,World Bank,per mn,level,coverage gaps
+articles,S&E articles count,World Bank,count,level,volume not quality
+pat_res,Resident patent applications,World Bank,count,office-basis,not origin
+rtfpna,TFP national accounts,PWT,index,level,growth measure
+ctfp,TFP relative to USA,PWT,index,USA≈1,gap = -ln(ctfp)
+dln_tfp,TFP growth,derived,%,Δln rtfpna×100,noisy annually
+gap,Distance to frontier,derived,log points,-ln(ctfp),USA≈0
+rd_stock,R&D knowledge stock,derived,USD PPP,PIM δ=0.15,initial condition sensitive

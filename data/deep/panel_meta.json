@@ -1,0 +1,7 @@
+{
+  "n_rows": 936,
+  "n_countries": 39,
+  "years": "2000-2023",
+  "rd_ppp_note": "Constructed rd_ppp = (rd_gdp/100)*gdppc_ppp*pop (OECD absolute only n=200 cells; see DEEP_DEVIATIONS)",
+  "path": "data\\deep\\panel_oecd_chn.csv"
+}

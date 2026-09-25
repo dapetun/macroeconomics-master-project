@@ -1,0 +1,8 @@
+claim,table,status,detail,n_rows
+H1 profile residuals,D02_profile_2019_2023.csv,present,sign pattern USA intensity vs CHN scale,12
+H2 main elasticity,D03_all_specs.csv,present,beta>0 and robust across specs,12
+H3 interaction beta3,D04_robustness.csv,present,sign/significance across robustness,23
+H4 capital vs TFP shares,D05_tfp_share.csv,present,CHN TFP share < USA,20
+H5 China net importer,D06_ic_trade_panel.csv,present,ic_net<0 all years for CHN,518
+H6 TOP500 shares,D07_shares.csv,present,rise then fall; systems vs rmax,288
+H7 open LPM,D08_lpm.csv,present,is_chn beta>0 across specs,4

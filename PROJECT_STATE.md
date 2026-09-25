@@ -1,5 +1,8 @@
 # PROJECT_STATE.md — снимок состояния проекта (оркестрация 2026-09-20)
 
+
+> **deep-research (2026-09-25):** на этой ветке действуют DEEP_RESEARCH_PLAN.md, DEEP_RQ_AND_HYPOTHESES.md, DEEP_LITERATURE_NOTES.md, DEEP_RESULTS.md. Старые RQ_FREEZE / APPROVED_METHOD_SET — для ветки report-20pp.
+
 **Дата refresh:** 2026-09-22 (Cover original theme: covering RQ, абсолюты, snapshots, radar)  
 **Тема:** «Путь развития США vs путь развития Китая: технологическое соперничество от фундаментальной науки до внедрения»  
 **Тип:** учебное исследовательское исследование магистерской программы  

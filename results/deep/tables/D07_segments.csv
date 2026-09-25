@@ -1,0 +1,636 @@
+list_year,iso,Segment,n
+2010,Australia,Academic,2
+2010,Australia,Government,1
+2010,Australia,Research,1
+2010,Austria,Academic,1
+2010,Belgium,Industry,2
+2010,Brazil,Academic,1
+2010,Brazil,Research,1
+2010,CHN,Academic,4
+2010,CHN,Industry,34
+2010,CHN,Research,3
+2010,Canada,Academic,3
+2010,Canada,Industry,1
+2010,Canada,Research,2
+2010,Denmark,Industry,2
+2010,Finland,Academic,1
+2010,France,Academic,3
+2010,France,Government,1
+2010,France,Industry,14
+2010,France,Research,7
+2010,France,Vendor,1
+2010,Germany,Academic,8
+2010,Germany,Industry,11
+2010,Germany,Research,7
+2010,Hong Kong,Industry,1
+2010,India,Industry,1
+2010,India,Research,3
+2010,Ireland,Research,1
+2010,Italy,Academic,1
+2010,Italy,Industry,4
+2010,Italy,Research,1
+2010,Japan,Academic,10
+2010,Japan,Industry,5
+2010,Japan,Research,11
+2010,"Korea, South",Research,3
+2010,Netherlands,Academic,1
+2010,Netherlands,Industry,1
+2010,New Zealand,Industry,5
+2010,Norway,Academic,2
+2010,Norway,Industry,1
+2010,Poland,Academic,4
+2010,Poland,Industry,2
+2010,Russia,Academic,3
+2010,Russia,Classified,1
+2010,Russia,Government,4
+2010,Russia,Industry,2
+2010,Russia,Research,1
+2010,Saudi Arabia,Academic,1
+2010,Saudi Arabia,Industry,5
+2010,Singapore,Government,1
+2010,Singapore,Industry,1
+2010,Slovenia,Research,1
+2010,Spain,Academic,1
+2010,Spain,Industry,2
+2010,Sweden,Academic,5
+2010,Sweden,Government,1
+2010,Switzerland,Academic,3
+2010,Switzerland,Research,1
+2010,USA,Academic,22
+2010,USA,Classified,5
+2010,USA,Government,4
+2010,USA,Industry,175
+2010,USA,Research,63
+2010,USA,Vendor,5
+2010,United Kingdom,Academic,4
+2010,United Kingdom,Classified,4
+2010,United Kingdom,Industry,13
+2010,United Kingdom,Research,4
+2011,Australia,Academic,2
+2011,Australia,Government,2
+2011,Austria,Academic,2
+2011,Belgium,Industry,1
+2011,Brazil,Academic,1
+2011,Brazil,Research,1
+2011,CHN,Academic,3
+2011,CHN,Industry,64
+2011,CHN,Research,7
+2011,Canada,Academic,6
+2011,Canada,Research,3
+2011,Denmark,Industry,2
+2011,Finland,Academic,1
+2011,France,Academic,3
+2011,France,Government,1
+2011,France,Industry,9
+2011,France,Research,7
+2011,France,Vendor,3
+2011,Germany,Academic,8
+2011,Germany,Industry,6
+2011,Germany,Research,6
+2011,India,Industry,1
+2011,India,Research,1
+2011,Ireland,Industry,3
+2011,Israel,Industry,3
+2011,Italy,Academic,1
+2011,Italy,Industry,2
+2011,Italy,Research,1
+2011,Japan,Academic,8
+2011,Japan,Industry,13
+2011,Japan,Research,9
+2011,"Korea, South",Research,3
+2011,Poland,Academic,4
+2011,Poland,Industry,1
+2011,Poland,Research,1
+2011,Russia,Academic,3
+2011,Russia,Industry,1
+2011,Russia,Research,1
+2011,Saudi Arabia,Academic,1
+2011,Saudi Arabia,Industry,2
+2011,Singapore,Industry,1
+2011,South Africa,Academic,1
+2011,Spain,Academic,3
+2011,Sweden,Academic,2
+2011,Sweden,Government,1
+2011,Switzerland,Academic,1
+2011,Switzerland,Research,2
+2011,Taiwan,Academic,1
+2011,Taiwan,Research,1
+2011,USA,Academic,22
+2011,USA,Classified,2
+2011,USA,Government,5
+2011,USA,Industry,169
+2011,USA,Research,60
+2011,USA,Vendor,5
+2011,United Kingdom,Academic,2
+2011,United Kingdom,Classified,6
+2011,United Kingdom,Industry,10
+2011,United Kingdom,Research,9
+2013,Australia,Academic,1
+2013,Australia,Government,1
+2013,Australia,Research,3
+2013,Austria,Academic,1
+2013,Belgium,Academic,1
+2013,Brazil,Industry,2
+2013,Brazil,Research,1
+2013,CHN,Academic,2
+2013,CHN,Industry,52
+2013,CHN,Research,9
+2013,Canada,Academic,4
+2013,Canada,Government,1
+2013,Canada,Industry,2
+2013,Canada,Research,3
+2013,Denmark,Industry,1
+2013,Finland,Academic,2
+2013,France,Academic,5
+2013,France,Government,1
+2013,France,Industry,10
+2013,France,Research,5
+2013,France,Vendor,1
+2013,Germany,Academic,9
+2013,Germany,Industry,4
+2013,Germany,Research,7
+2013,Hong Kong,Industry,2
+2013,India,Academic,1
+2013,India,Industry,6
+2013,India,Research,5
+2013,Ireland,Industry,1
+2013,Ireland,Research,1
+2013,Israel,Industry,2
+2013,Italy,Academic,1
+2013,Italy,Industry,2
+2013,Italy,Research,2
+2013,Japan,Academic,15
+2013,Japan,Industry,4
+2013,Japan,Others,1
+2013,Japan,Research,8
+2013,"Korea, South",Industry,2
+2013,"Korea, South",Research,3
+2013,Netherlands,Academic,1
+2013,Netherlands,Industry,2
+2013,Norway,Academic,3
+2013,Poland,Academic,2
+2013,Russia,Academic,4
+2013,Russia,Industry,1
+2013,Saudi Arabia,Academic,1
+2013,Saudi Arabia,Industry,1
+2013,Saudi Arabia,Research,1
+2013,Spain,Academic,1
+2013,Spain,Research,1
+2013,Sweden,Academic,3
+2013,Sweden,Industry,2
+2013,Switzerland,Academic,1
+2013,Switzerland,Research,4
+2013,Taiwan,Research,1
+2013,USA,Academic,19
+2013,USA,Government,13
+2013,USA,Industry,180
+2013,USA,Research,41
+2013,USA,Vendor,11
+2013,United Kingdom,Academic,6
+2013,United Kingdom,Classified,3
+2013,United Kingdom,Industry,6
+2013,United Kingdom,Research,8
+2014,Australia,Government,3
+2014,Australia,Industry,1
+2014,Australia,Research,5
+2014,Austria,Academic,1
+2014,Belgium,Industry,1
+2014,Brazil,Industry,2
+2014,Brazil,Research,2
+2014,CHN,Academic,2
+2014,CHN,Industry,49
+2014,CHN,Research,10
+2014,Canada,Academic,2
+2014,Canada,Industry,1
+2014,Canada,Research,3
+2014,Denmark,Industry,1
+2014,Denmark,Research,1
+2014,Finland,Academic,3
+2014,France,Academic,6
+2014,France,Government,1
+2014,France,Industry,15
+2014,France,Research,6
+2014,France,Vendor,2
+2014,Germany,Academic,12
+2014,Germany,Industry,5
+2014,Germany,Research,9
+2014,Hong Kong,Industry,1
+2014,Hungary,Academic,1
+2014,India,Academic,1
+2014,India,Industry,3
+2014,India,Research,5
+2014,Israel,Industry,2
+2014,Italy,Academic,1
+2014,Italy,Industry,2
+2014,Japan,Academic,17
+2014,Japan,Industry,5
+2014,Japan,Others,1
+2014,Japan,Research,9
+2014,"Korea, South",Industry,5
+2014,"Korea, South",Research,4
+2014,Malaysia,Industry,1
+2014,Netherlands,Academic,2
+2014,Netherlands,Industry,3
+2014,Norway,Academic,3
+2014,Poland,Academic,2
+2014,Russia,Academic,7
+2014,Russia,Industry,2
+2014,Saudi Arabia,Academic,1
+2014,Saudi Arabia,Industry,2
+2014,Saudi Arabia,Research,1
+2014,Spain,Academic,1
+2014,Spain,Research,1
+2014,Sweden,Academic,3
+2014,Sweden,Industry,2
+2014,Switzerland,Academic,1
+2014,Switzerland,Research,6
+2014,Taiwan,Research,1
+2014,USA,Academic,17
+2014,USA,Government,19
+2014,USA,Industry,140
+2014,USA,Research,42
+2014,USA,Vendor,13
+2014,United Kingdom,Academic,5
+2014,United Kingdom,Industry,12
+2014,United Kingdom,Research,13
+2015,Australia,Government,1
+2015,Australia,Research,3
+2015,Austria,Academic,1
+2015,Brazil,Academic,3
+2015,Brazil,Industry,1
+2015,Brazil,Research,2
+2015,Bulgaria,Research,1
+2015,CHN,Academic,6
+2015,CHN,Government,8
+2015,CHN,Industry,84
+2015,CHN,Research,11
+2015,Canada,Academic,2
+2015,Canada,Industry,1
+2015,Canada,Research,3
+2015,Croatia,Academic,1
+2015,Czech Republic,Academic,1
+2015,Denmark,Academic,1
+2015,Denmark,Research,1
+2015,Finland,Academic,2
+2015,France,Academic,5
+2015,France,Industry,7
+2015,France,Research,5
+2015,France,Vendor,1
+2015,Germany,Academic,18
+2015,Germany,Industry,3
+2015,Germany,Research,12
+2015,Hong Kong,Industry,1
+2015,Hungary,Academic,1
+2015,India,Academic,3
+2015,India,Industry,3
+2015,India,Research,5
+2015,Italy,Academic,2
+2015,Italy,Industry,2
+2015,Japan,Academic,21
+2015,Japan,Industry,2
+2015,Japan,Research,14
+2015,"Korea, South",Industry,6
+2015,"Korea, South",Research,4
+2015,Mexico,Research,1
+2015,Netherlands,Academic,1
+2015,Netherlands,Industry,1
+2015,New Zealand,Industry,1
+2015,Norway,Academic,1
+2015,Poland,Academic,5
+2015,Poland,Research,1
+2015,Russia,Academic,6
+2015,Russia,Research,1
+2015,Saudi Arabia,Academic,2
+2015,Saudi Arabia,Industry,3
+2015,Saudi Arabia,Research,1
+2015,Spain,Academic,1
+2015,Spain,Research,1
+2015,Sweden,Academic,3
+2015,Switzerland,Academic,1
+2015,Switzerland,Research,5
+2015,USA,Academic,20
+2015,USA,Government,21
+2015,USA,Industry,107
+2015,USA,Research,46
+2015,USA,Vendor,5
+2015,United Kingdom,Academic,3
+2015,United Kingdom,Industry,7
+2015,United Kingdom,Research,8
+2019,Australia,Academic,2
+2019,Australia,Industry,1
+2019,Austria,Academic,1
+2019,Brazil,Academic,1
+2019,Brazil,Industry,1
+2019,Brazil,Research,1
+2019,CHN,Academic,6
+2019,CHN,Government,23
+2019,CHN,Industry,179
+2019,CHN,Others,6
+2019,CHN,Research,12
+2019,CHN,Vendor,2
+2019,Canada,Academic,4
+2019,Canada,Industry,4
+2019,Canada,Research,1
+2019,Czech Republic,Academic,1
+2019,Finland,Academic,1
+2019,France,Academic,3
+2019,France,Industry,3
+2019,France,Research,9
+2019,France,Vendor,3
+2019,Germany,Academic,6
+2019,Germany,Industry,3
+2019,Germany,Research,7
+2019,Hong Kong,Industry,1
+2019,India,Research,2
+2019,Ireland,Industry,14
+2019,Italy,Academic,2
+2019,Italy,Industry,3
+2019,Japan,Academic,12
+2019,Japan,Industry,4
+2019,Japan,Research,12
+2019,Japan,Vendor,1
+2019,"Korea, South",Research,3
+2019,Netherlands,Industry,15
+2019,Norway,Industry,2
+2019,Poland,Academic,1
+2019,Russia,Academic,1
+2019,Russia,Industry,1
+2019,Russia,Research,1
+2019,Saudi Arabia,Academic,1
+2019,Saudi Arabia,Industry,2
+2019,Singapore,Industry,4
+2019,Spain,Academic,2
+2019,Sweden,Academic,2
+2019,Switzerland,Research,2
+2019,Taiwan,Research,2
+2019,USA,Academic,9
+2019,USA,Government,13
+2019,USA,Industry,53
+2019,USA,Research,40
+2019,USA,Vendor,2
+2019,United Arab Emirates,Industry,2
+2019,United Kingdom,Academic,2
+2019,United Kingdom,Research,9
+2022,Australia,Academic,2
+2022,Australia,Industry,1
+2022,Australia,Research,2
+2022,Austria,Academic,2
+2022,Belgium,Industry,1
+2022,Brazil,Academic,1
+2022,Brazil,Industry,6
+2022,Brazil,Research,1
+2022,Bulgaria,Academic,1
+2022,CHN,Academic,4
+2022,CHN,Government,7
+2022,CHN,Industry,134
+2022,CHN,Others,9
+2022,CHN,Research,7
+2022,CHN,Vendor,1
+2022,Canada,Academic,4
+2022,Canada,Government,4
+2022,Canada,Industry,1
+2022,Canada,Research,1
+2022,Czechia,Academic,2
+2022,Finland,Academic,1
+2022,Finland,Research,2
+2022,France,Academic,4
+2022,France,Industry,5
+2022,France,Research,10
+2022,France,Vendor,5
+2022,Germany,Academic,15
+2022,Germany,Industry,3
+2022,Germany,Others,1
+2022,Germany,Research,15
+2022,Hungary,Academic,1
+2022,India,Research,3
+2022,Ireland,Industry,5
+2022,Italy,Academic,2
+2022,Italy,Industry,4
+2022,Italy,Others,1
+2022,Japan,Academic,11
+2022,Japan,Industry,4
+2022,Japan,Research,16
+2022,Luxembourg,Research,2
+2022,Morocco,Academic,1
+2022,Netherlands,Industry,5
+2022,Netherlands,Research,2
+2022,Netherlands,Vendor,1
+2022,Norway,Academic,1
+2022,Norway,Industry,2
+2022,Poland,Academic,3
+2022,Russia,Academic,1
+2022,Russia,Industry,6
+2022,Saudi Arabia,Academic,1
+2022,Saudi Arabia,Industry,5
+2022,Singapore,Industry,1
+2022,Singapore,Research,2
+2022,Slovenia,Research,2
+2022,South Korea,Academic,1
+2022,South Korea,Government,2
+2022,South Korea,Industry,4
+2022,South Korea,Research,1
+2022,Spain,Academic,1
+2022,Sweden,Academic,5
+2022,Sweden,Research,1
+2022,Switzerland,Industry,1
+2022,Switzerland,Research,3
+2022,Taiwan,Research,2
+2022,Thailand,Research,1
+2022,USA,Academic,20
+2022,USA,Government,16
+2022,USA,Industry,40
+2022,USA,Others,1
+2022,USA,Research,40
+2022,USA,Vendor,10
+2022,United Arab Emirates,Industry,2
+2022,United Kingdom,Academic,3
+2022,United Kingdom,Industry,4
+2022,United Kingdom,Research,8
+2024,Argentina,Research,1
+2024,Australia,Academic,2
+2024,Australia,Government,1
+2024,Australia,Research,1
+2024,Austria,Academic,3
+2024,Belgium,Industry,1
+2024,Brazil,Academic,1
+2024,Brazil,Industry,7
+2024,Brazil,Research,1
+2024,Bulgaria,Academic,1
+2024,Bulgaria,Research,1
+2024,CHN,Academic,3
+2024,CHN,Government,1
+2024,CHN,Industry,54
+2024,CHN,Research,4
+2024,CHN,Vendor,1
+2024,Canada,Academic,3
+2024,Canada,Government,4
+2024,Canada,Industry,1
+2024,Canada,Research,1
+2024,Czechia,Academic,2
+2024,Czechia,Industry,1
+2024,Denmark,Research,1
+2024,Finland,Academic,1
+2024,Finland,Research,2
+2024,France,Academic,7
+2024,France,Industry,3
+2024,France,Research,9
+2024,France,Vendor,5
+2024,Germany,Academic,23
+2024,Germany,Industry,1
+2024,Germany,Others,1
+2024,Germany,Research,15
+2024,Hungary,Academic,1
+2024,Iceland,Industry,1
+2024,India,Research,6
+2024,Ireland,Industry,4
+2024,Israel,Industry,1
+2024,Italy,Academic,3
+2024,Italy,Industry,5
+2024,Italy,Others,2
+2024,Italy,Research,4
+2024,Japan,Academic,13
+2024,Japan,Industry,5
+2024,Japan,Research,16
+2024,Luxembourg,Research,1
+2024,Morocco,Academic,1
+2024,Netherlands,Industry,5
+2024,Netherlands,Others,1
+2024,Netherlands,Research,3
+2024,Netherlands,Vendor,1
+2024,Norway,Academic,1
+2024,Norway,Industry,5
+2024,Poland,Academic,8
+2024,Portugal,Research,1
+2024,Russia,Academic,1
+2024,Russia,Industry,5
+2024,Saudi Arabia,Academic,1
+2024,Saudi Arabia,Industry,6
+2024,Singapore,Industry,1
+2024,Singapore,Research,3
+2024,Slovenia,Research,2
+2024,South Korea,Academic,1
+2024,South Korea,Government,3
+2024,South Korea,Industry,7
+2024,South Korea,Research,2
+2024,Spain,Academic,1
+2024,Spain,Research,2
+2024,Sweden,Academic,5
+2024,Sweden,Industry,2
+2024,Sweden,Others,1
+2024,Switzerland,Academic,1
+2024,Switzerland,Industry,1
+2024,Switzerland,Research,3
+2024,Taiwan,Government,2
+2024,Taiwan,Industry,2
+2024,Taiwan,Research,2
+2024,Taiwan,Vendor,1
+2024,Thailand,Industry,1
+2024,Thailand,Research,1
+2024,Turkey,Government,2
+2024,USA,Academic,24
+2024,USA,Government,17
+2024,USA,Industry,65
+2024,USA,Others,2
+2024,USA,Research,52
+2024,USA,Vendor,13
+2024,United Arab Emirates,Industry,2
+2024,United Arab Emirates,Research,1
+2024,United Kingdom,Academic,4
+2024,United Kingdom,Industry,3
+2024,United Kingdom,Research,7
+2025,Argentina,Research,1
+2025,Australia,Academic,2
+2025,Australia,Government,1
+2025,Australia,Research,1
+2025,Austria,Academic,2
+2025,Belgium,Industry,1
+2025,Brazil,Academic,1
+2025,Brazil,Industry,8
+2025,Brazil,Research,1
+2025,Bulgaria,Academic,1
+2025,CHN,Academic,3
+2025,CHN,Government,1
+2025,CHN,Industry,34
+2025,CHN,Research,1
+2025,CHN,Vendor,1
+2025,Canada,Academic,9
+2025,Canada,Government,6
+2025,Canada,Industry,1
+2025,Canada,Others,1
+2025,Canada,Research,2
+2025,Czechia,Academic,2
+2025,Czechia,Industry,1
+2025,Denmark,Research,1
+2025,Finland,Academic,1
+2025,Finland,Research,2
+2025,France,Academic,6
+2025,France,Industry,3
+2025,France,Research,9
+2025,France,Vendor,5
+2025,Germany,Academic,22
+2025,Germany,Others,1
+2025,Germany,Research,17
+2025,Hungary,Academic,1
+2025,Iceland,Industry,1
+2025,India,Others,1
+2025,India,Research,5
+2025,Ireland,Industry,2
+2025,Israel,Industry,3
+2025,Italy,Academic,4
+2025,Italy,Industry,4
+2025,Italy,Others,3
+2025,Italy,Research,7
+2025,Japan,Academic,15
+2025,Japan,Industry,12
+2025,Japan,Research,16
+2025,Kazakhstan,Government,1
+2025,Kazakhstan,Industry,1
+2025,Luxembourg,Research,1
+2025,Morocco,Academic,1
+2025,Netherlands,Industry,1
+2025,Netherlands,Others,2
+2025,Netherlands,Research,3
+2025,Netherlands,Vendor,1
+2025,Norway,Academic,3
+2025,Norway,Industry,6
+2025,Poland,Academic,7
+2025,Poland,Industry,1
+2025,Portugal,Research,1
+2025,Russia,Industry,5
+2025,Saudi Arabia,Academic,2
+2025,Saudi Arabia,Industry,5
+2025,Singapore,Academic,1
+2025,Singapore,Industry,1
+2025,Singapore,Research,3
+2025,Slovakia,Academic,1
+2025,Slovenia,Research,2
+2025,South Korea,Academic,1
+2025,South Korea,Government,3
+2025,South Korea,Industry,9
+2025,South Korea,Research,2
+2025,Spain,Academic,1
+2025,Spain,Research,2
+2025,Sweden,Academic,6
+2025,Sweden,Industry,1
+2025,Sweden,Others,1
+2025,Switzerland,Academic,1
+2025,Switzerland,Research,2
+2025,Taiwan,Government,2
+2025,Taiwan,Industry,3
+2025,Taiwan,Research,4
+2025,Taiwan,Vendor,1
+2025,Thailand,Industry,1
+2025,Thailand,Research,1
+2025,Turkey,Government,2
+2025,USA,Academic,26
+2025,USA,Government,14
+2025,USA,Industry,62
+2025,USA,Others,2
+2025,USA,Research,51
+2025,USA,Vendor,16
+2025,United Arab Emirates,Industry,3
+2025,United Arab Emirates,Research,2
+2025,United Kingdom,Academic,5
+2025,United Kingdom,Industry,1
+2025,United Kingdom,Research,3
+2025,Vietnam,Industry,1

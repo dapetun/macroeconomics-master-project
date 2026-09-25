@@ -1,0 +1,32 @@
+{
+  "source": "OECD MSTI SDMX",
+  "base": "https://sdmx.oecd.org/public/rest/v1/data/DSD_MSTI@DF_MSTI",
+  "download_date": "2026-09-25",
+  "n_rows": 1341,
+  "sha256": "b8ada90484c634d1a78680c7787e3a27fd14426777aaf6083634746ed28daf50",
+  "series": {
+    "gerd_usd_ppp_current": [
+      "G",
+      "USD_PPP",
+      "V"
+    ],
+    "gerd_usd_ppp_constant": [
+      "G",
+      "USD_PPP",
+      "Q"
+    ],
+    "gerd_pct_gdp_oecd": [
+      "G",
+      "PT_B1GQ",
+      "_Z"
+    ],
+    "berd_pct_gdp": [
+      "B",
+      "PT_B1GQ",
+      "_Z"
+    ]
+  },
+  "notes": [
+    "gerd_usd_ppp_constant (PRICE_BASE=Q) sparse/missing; panel builder will deflate current USD PPP with US GDP deflator"
+  ]
+}

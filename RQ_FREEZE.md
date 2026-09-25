@@ -1,5 +1,8 @@
 # RQ FREEZE — заморозка отвечаемого вопроса и гипотез
 
+
+> **На ветке deep-research** этот файл заменён DEEP_RQ_AND_HYPOTHESES.md.
+
 **Дата:** 2026-09-24 (refresh: 20-page report branch `report-20pp`)  
 **Ветка:** `report-20pp`  
 **Target State:** A — честная измеримая карта + тонкие tech-snapshots  

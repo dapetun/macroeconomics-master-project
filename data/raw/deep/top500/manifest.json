@@ -1,0 +1,36 @@
+{
+  "n_rows": 4500,
+  "years_present": [
+    2010,
+    2011,
+    2013,
+    2014,
+    2015,
+    2019,
+    2022,
+    2024,
+    2025
+  ],
+  "years_missing": [
+    2012,
+    2016,
+    2017,
+    2018,
+    2020,
+    2021,
+    2023
+  ],
+  "files": {
+    "TOP500_201011.xls": "269461687e17d971deb1d326b12897c5e8def45ecf056cbced063eb0c6385bb1",
+    "TOP500_201111.xls": "52dfff9a38a1359940a0b8930c21c6921bb79b835d02771c06e4929ed4e5534d",
+    "TOP500_201311.xls": "d0ffd9a4f1eeaaa6c16020dd1bb02a1297aa2ffcc7b350f0ef47f0368d068a8f",
+    "TOP500_201411.xls": "d61a91e22099938c04508e5ac41a916d10313bd50c7d7e8c7b433e41f70e7636",
+    "TOP500_201511.xls": "e8c0c2c922e3f89ae0bd236e0eaff594df64b10f25805dd2fc5d6acd85cd7b32",
+    "TOP500_201911.xls": "94b199dc163821e00201ec065d5a4b30351878d90542917304b1b55f6503d057",
+    "TOP500_202211.xlsx": "b4249e217dd8f53a783357d58eb1d741c581e4ff9b5bcaeb5df70ed2440f877c",
+    "TOP500_202411.xlsx": "f956f155af7f03a867df2e3d850c6ab748f5ff2fb2462286524dbfb9f6e4172b",
+    "TOP500_202511.xlsx": "cb7559b36f31564c17b4c42f12807f47c6dd092de86b8f3617f820b6a5ca143b"
+  },
+  "download_date": "2026-09-25",
+  "note": "Direct top500.org SSL blocked; Wayback Machine used for many years"
+}
