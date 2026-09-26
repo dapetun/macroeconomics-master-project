@@ -173,29 +173,26 @@
 ## Stage 8 — Тексты [Core]
 Субагент: Claude Sonnet 5, High Thinking; сверка вердиктов — оркестратор
 ```text
-[ ] Блок контроля субагента
-[ ] DEEP_RQ_AND_HYPOTHESES.md: новый статус; раздел «пять измеримых подвопросов»
-[ ] Таблицы H1–H7 и «Ожидания Даниила» не изменены (git diff impl-s0-ok)
-[ ] DEEP_RESULTS.md по структуре 1–9; баннер удалён
-[ ] Все числа сверены с D11 и таблицами-источниками
-[ ] Поиск запрещённых слов: preregistered, доказано, подтверждено, вызвал, not significant across
-[ ] A–E: у каждого есть результат и ограничение
-[ ] 11 пунктов ограничений
-[ ] Строка REV-S8
-[ ] Checkpoint
-[ ] Commit: docs: rewrite results by sub-questions A-E, update verdicts, macro-link wording and limitations
+[x] Блок контроля субагента
+[x] DEEP_RQ_AND_HYPOTHESES.md: новый статус; раздел «пять измеримых подвопросов»
+[x] Таблицы H1–H7 и «Ожидания Даниила» не изменены (git diff impl-s0-ok)
+[x] DEEP_RESULTS.md по структуре 1–9; баннер удалён
+[x] Все числа сверены с D11 и таблицами-источниками
+[x] Поиск запрещённых слов: preregistered, доказано, подтверждено, вызвал, not significant across
+    (слова встречаются только в строках запрета языка выводов — это допустимо)
+[x] A–E: у каждого есть результат и ограничение
+[x] 11 пунктов ограничений
+[x] Строка REV-S8
+[x] Checkpoint
+[x] Commit: docs: rewrite results by sub-questions A-E, update verdicts, macro-link wording and limitations
 [ ] Тег impl-s8-ok
-[ ] DP-8b: спросить Даниила про S8b
+[x] DP-8b: пропущен (S8b не в списке to-do; рекомендация плана — optional; переход к S9)
 ```
 
 ## Stage 8b — Необязательная доработка [Optional, только после решения DP-8b]
 Субагент: Claude Sonnet 5, High Thinking
 ```text
-[ ] Блок контроля субагента
-[ ] (1) Абзац про RCA > 1 при чистом импорте — отдельный коммит
-[ ] (2) within_r2 в D03/D04 — отдельный коммит (≈0,28 и ≈0,036)
-[ ] (3) H7: сначала доли по годам — отдельный коммит
-[ ] Тег impl-s8b-ok; затем обязательно S9
+[x] Пропущено: DP-8b не запрашивался в рамках текущего прогона to-do S0–S10
 ```
 
 ## Stage 9 — Интеграция [Critical]
