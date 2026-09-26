@@ -51,6 +51,9 @@ for c in countries:
             "tfp_share": float(m["g_A"] / m["g_Y"]) if m["g_Y"] else np.nan,
         })
 dec = pd.DataFrame(rows)
+for c in ["g_Y", "contrib_K", "contrib_Lh", "g_A"]:
+    dec[f"{c}_pp"] = dec[c] * 100
+dec["capital_share_of_growth"] = dec["contrib_K"] / dec["g_Y"]
 save_table(dec, "D05_decomposition")
 save_table(dec[["country_iso3", "period", "tfp_share"]], "D05_tfp_share")
 
