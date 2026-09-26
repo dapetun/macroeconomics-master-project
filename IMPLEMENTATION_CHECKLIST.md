@@ -57,18 +57,18 @@
 ## Stage 1 — H1: варианты нормы [Core]
 Субагент: Claude Sonnet 5, High Thinking
 ```text
-[ ] Блок контроля субагента
-[ ] residuals_for с параметром rhs и ln_gdppc2
-[ ] Блок VARIANTS → D02_profile_variants_2019_2023.csv (48 строк)
-[ ] График D02_profile_with_vs_without_pop.png
-[ ] D02_support_check.csv
-[ ] python D02; jupytext --to ipynb D02
-[ ] Проверка: rd_gdp USA with_pop ≈ −6 %, without_pop ≈ +41 %; CHN +91 % / +186 %
-[ ] Проверка: ln_pop CHN ≈ 21,07, max остальных ≈ 18,66
-[ ] Старые таблицы D02 идентичны (compare_with_head.py ×4)
-[ ] Строка REV-S1 в DEEP_DEVIATIONS.md
-[ ] Checkpoint
-[ ] Commit: feat(H1): add norm variants with/without population and support check
+[x] Блок контроля субагента
+[x] residuals_for с параметром rhs и ln_gdppc2
+[x] Блок VARIANTS → D02_profile_variants_2019_2023.csv (48 строк)
+[x] График D02_profile_with_vs_without_pop.png
+[x] D02_support_check.csv
+[x] python D02; jupytext --to ipynb D02
+[x] Проверка: rd_gdp USA with_pop ≈ −6 %, without_pop ≈ +41 %; CHN +91 % / +186 %
+[x] Проверка: ln_pop CHN ≈ 21,07, max остальных ≈ 18,66
+[x] Старые таблицы D02 идентичны (compare_with_head.py ×4)
+[x] Строка REV-S1 в DEEP_DEVIATIONS.md
+[x] Checkpoint
+[x] Commit: feat(H1): add norm variants with/without population and support check
 [ ] Тег impl-s1-ok
 ```
 

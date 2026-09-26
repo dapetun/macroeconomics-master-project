@@ -24,14 +24,14 @@ indicators = {
 }
 
 # %%
-def residuals_for(k: str, df: pd.DataFrame, exclude_chn: bool = False) -> pd.DataFrame:
+def residuals_for(k: str, df: pd.DataFrame, exclude_chn: bool = False,
+                  rhs: str = "ln_gdppc + ln_pop + C(year)") -> pd.DataFrame:
     d = df.dropna(subset=[k, "ln_gdppc", "ln_pop"]).copy()
+    d["ln_gdppc2"] = d["ln_gdppc"] ** 2
     d["lnk"] = np.log(d[k].where(d[k] > 0))
     d = d.dropna(subset=["lnk"])
     train = d[d["country_iso3"] != "CHN"] if exclude_chn else d
-    res = smf.ols("lnk ~ ln_gdppc + ln_pop + C(year)", data=train).fit()
-    # predict for all rows in d using trained params via formula on full d
-    # refit with same formula on train then predict
+    res = smf.ols(f"lnk ~ {rhs}", data=train).fit()
     d["resid"] = d["lnk"] - res.predict(d)
     d["pct_above"] = np.exp(d["resid"]) - 1
     d["indicator"] = k
@@ -89,6 +89,49 @@ for i, k in enumerate(inds):
 axes[0].legend(fontsize=8)
 fig.suptitle("Пути отклонения от нормы")
 save_fig(fig, "D02_residual_paths")
+
+# %%
+VARIANTS = {
+    "with_pop": ("ln_gdppc + ln_pop + C(year)", False),
+    "without_pop": ("ln_gdppc + C(year)", False),
+    "with_pop_norm_without_chn": ("ln_gdppc + ln_pop + C(year)", True),
+    "with_pop_quadratic": ("ln_gdppc + ln_gdppc2 + ln_pop + C(year)", False),
+}
+vrows = []
+for vname, (rhs, excl) in VARIANTS.items():
+    for k in inds:
+        r = residuals_for(k, panel, exclude_chn=excl, rhs=rhs)
+        r = r[r.country_iso3.isin(["USA", "CHN"]) & r.year.between(2019, 2023)]
+        for c, v in r.groupby("country_iso3")["pct_above"].mean().items():
+            vrows.append({"variant": vname, "indicator": k, "country_iso3": c, "pct_above": v})
+variants = pd.DataFrame(vrows)
+save_table(variants, "D02_profile_variants_2019_2023")
+
+fig, axes = plt.subplots(1, 2, figsize=(13, 5), sharey=True)
+for ax, vname, title in [(axes[0], "with_pop", "Норма: доход + население"),
+                         (axes[1], "without_pop", "Норма: только доход")]:
+    sub = variants[variants.variant == vname]
+    u = sub[sub.country_iso3 == "USA"].set_index("indicator").reindex(inds)["pct_above"] * 100
+    c = sub[sub.country_iso3 == "CHN"].set_index("indicator").reindex(inds)["pct_above"] * 100
+    ax.barh(ypos - w / 2, u, w, label="USA", color=COLOR_USA)
+    ax.barh(ypos + w / 2, c, w, label="CHN", color=COLOR_CHN)
+    ax.axvline(0, color="black", lw=0.8)
+    ax.set_yticks(ypos)
+    ax.set_yticklabels(inds)
+    style_axes(ax, title=title, xlabel="% выше/ниже нормы, среднее 2019–2023")
+axes[0].legend()
+save_fig(fig, "D02_profile_with_vs_without_pop")
+
+last = panel[panel.year == 2019]
+others = last[~last.country_iso3.isin(["USA", "CHN"])]
+support = pd.DataFrame([{
+    "ln_pop_CHN": float(last.loc[last.country_iso3 == "CHN", "ln_pop"].iloc[0]),
+    "ln_pop_USA": float(last.loc[last.country_iso3 == "USA", "ln_pop"].iloc[0]),
+    "ln_pop_max_others": float(others["ln_pop"].max()),
+    "ln_gdppc_CHN": float(last.loc[last.country_iso3 == "CHN", "ln_gdppc"].iloc[0]),
+    "ln_gdppc_min_others": float(last.loc[last.country_iso3 != "CHN", "ln_gdppc"].min()),
+}])
+save_table(support, "D02_support_check")
 
 # quadratic robustness summary
 rows = []
