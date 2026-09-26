@@ -19,8 +19,6 @@ raw = pd.read_csv(ROOT / "data" / "raw" / "deep" / "top500" / "top500_all.csv", 
 # Normalize columns
 cols = {c: c.strip() for c in raw.columns}
 df = raw.rename(columns=cols)
-# find rmax column
-rmax_col = [c for c in df.columns if "Rmax" in c][0]
 country_col = "Country" if "Country" in df.columns else [c for c in df.columns if c.lower() == "country"][0]
 accel_col = [c for c in df.columns if "Accelerator" in c and "Co-Processor" in c]
 accel_col = accel_col[0] if accel_col else None
@@ -29,11 +27,10 @@ seg_col = "Segment" if "Segment" in df.columns else None
 first_col = "First Appearance" if "First Appearance" in df.columns else None
 
 df["country"] = df[country_col].astype(str)
-df["rmax"] = pd.to_numeric(df[rmax_col], errors="coerce")
-# if median suspiciously small for recent years, might be GFlops — scale check
-med_2020 = df.loc[df.list_year == 2020, "rmax"].median()
-if med_2020 < 100:  # likely GFlop/s
-    df["rmax"] = df["rmax"] / 1000.0
+gf = pd.to_numeric(df["RMax"], errors="coerce").fillna(pd.to_numeric(df["Rmax"], errors="coerce"))
+tf = pd.to_numeric(df["Rmax [TFlop/s]"], errors="coerce")
+# lists 2010-2015 report Rmax in GFlop/s, lists 2019+ in TFlop/s
+df["rmax"] = tf.fillna(gf / 1000.0)
 
 # map country names to USA/China/other
 def map_c(x: str) -> str:
@@ -81,7 +78,7 @@ fig, ax = plt.subplots(figsize=(8, 4))
 for c, col in [("USA", COLOR_USA), ("CHN", COLOR_CHN)]:
     s = focus[focus.iso == c]
     ax.plot(s.list_year, s.share_systems * 100, color=col, label=f"{c} systems")
-    ax.plot(s.list_year, s.share_rmax * 100, color=col, ls="--", label=f"{c} Rmax")
+    ax.plot(s.list_year, s.share_rmax * 100, color=col, ls="--", label=f"{c} мощность (Rmax)")
 style_axes(ax, title="Доли TOP500: число систем vs мощность", ylabel="%")
 ax.legend(fontsize=8)
 save_fig(fig, "D07_share_systems_vs_rmax")
@@ -120,6 +117,7 @@ save_fig(fig, "D07_architecture_top50")
 
 # exascale
 exa = df[df.rmax >= 1_000_000][["list_year", "iso", "Name" if "Name" in df.columns else country_col, "rmax", "arch"]]
+exa = exa.rename(columns={"rmax": "rmax_tflops"})
 save_table(exa, "D07_exascale_table")
 
 if seg_col:

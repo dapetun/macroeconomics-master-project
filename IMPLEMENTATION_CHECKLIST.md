@@ -121,16 +121,16 @@
 ## Stage 5 — TOP500 [Critical]
 Субагент: Claude Sonnet 5, High Thinking
 ```text
-[ ] Блок контроля субагента
-[ ] Объединение RMax/Rmax (GFlop/s ÷ 1000) и Rmax [TFlop/s]; удалены rmax_col и проверка med_2020
-[ ] exa → rmax_tflops; подпись графика
-[ ] python D07; jupytext
-[ ] Проверка: rmax_sum > 0 во всех 9 годах; CHN share_rmax 0,130 / 0,323 (2019) / 0,014 (2025)
-[ ] Эксафлопсные: 8 строк, все ≥ 2022 (Frontier, El Capitan, Aurora, JUPITER Booster)
-[ ] new_entries, architecture_top50, segments идентичны
-[ ] Строка REV-S5
-[ ] Checkpoint
-[ ] Commit: fix(H6): harmonise TOP500 Rmax columns and units; rebuild exascale table
+[x] Блок контроля субагента
+[x] Объединение RMax/Rmax (GFlop/s ÷ 1000) и Rmax [TFlop/s]; удалены rmax_col и проверка med_2020
+[x] exa → rmax_tflops; подпись графика
+[x] python D07; jupytext
+[x] Проверка: rmax_sum > 0 во всех 9 годах; CHN share_rmax 0,130 / 0,323 (2019) / 0,014 (2025)
+[x] Эксафлопсные: 8 строк, все ≥ 2022 (Frontier, El Capitan, Aurora, JUPITER Booster)
+[x] new_entries, architecture_top50, segments идентичны
+[x] Строка REV-S5
+[x] Checkpoint
+[x] Commit: fix(H6): harmonise TOP500 Rmax columns and units; rebuild exascale table
 [ ] Тег impl-s5-ok
 ```
 
