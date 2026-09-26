@@ -1,7 +1,0 @@
-country,x,y,pearson_r,n_years,year_min,year_max
-USA,gerd_pct_gdp,scopus_articles,0.7833144253606297,14,2010,2023
-USA,researchers_per_million,scopus_articles,0.9182709174890489,13,2010,2022
-USA,gerd_pct_gdp,tfp_ctfp,,14,2010,2023
-CHN,gerd_pct_gdp,scopus_articles,0.9644971684627217,14,2010,2023
-CHN,researchers_per_million,scopus_articles,0.9913809172078836,14,2010,2023
-CHN,gerd_pct_gdp,tfp_ctfp,0.9540602210605154,14,2010,2023

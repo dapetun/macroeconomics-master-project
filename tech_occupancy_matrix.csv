@@ -1,9 +1,0 @@
-tci_stage,tci_name,AI,Semiconductors,HPC,Quantum,notes
-S,science,snapshot: AI pubs share 2023 (AI Index Fig 1.1.6),?,?,snapshot: quantum pubs labels 2022 (EPO-OECD Fig 8.2.7),snapshot ≠ measured; general articles NOT domain evidence
-HC,human_capital,?,?,?,?,tech-specific HC missing
-RD,R&D,?,?,?,?,GERD/BERD are general-macro only
-FIN,finance,snapshot: private AI USD bn 2024 (AI Index),?,?,snapshot: quantum funding share US firms ~60% (EPO-OECD E6),FIN mix still unmeasured; BERD=PERFORMED
-INN,innovation,snapshot: AI patent grant share 2023 + notable models 2024,?,?,snapshot: quantum IPF USA 3330 / CHN 947 (2005-2024),field patents for semis not collected
-COM,commercialization,snapshot: notable models 2024 (thin),?,?,?,adoption/revenue not measured
-PRD,production_scaling,?,qual: TWN foundry hole,snapshot: TOP500 systems Nov2015 & Nov2025,?,HS8542 must NOT fill PRD; TOP500 ≠ cloud AI compute
-ADE,adoption_export,?,measured: semi_exports_hs8542 + semi_status (≠fab),?,?,Only measured tech cell; trade ≠ fab/node

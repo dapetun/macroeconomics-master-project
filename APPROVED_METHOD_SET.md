@@ -1,12 +1,13 @@
 # APPROVED METHOD SET
 
 
-> **На ветке deep-research** методы задаёт DEEP_RESEARCH_PLAN.md / DEEP_RQ_AND_HYPOTHESES.md.
+> **На ветке deep-research** методы задаёт DEEP_RESEARCH_PLAN.md / DEEP_RQ_AND_HYPOTHESES.md.  
+> Файлы 20-стр. отчёта (`data_reviewed/`, `figures/`, `final_project.md`, ноутбуки `01–05` и т.п.) хранятся в ветке **`report-20pp`**, не в рабочем дереве `deep-research`.
 
 **Дата утверждения:** 2026-09-20; **refresh:** 2026-09-24 (ветка `report-20pp`, 20-страничный отчёт)  
 **Статус:** **APPROVED**  
 **Target State:** A — честная измеримая карта + тонкие tech-snapshots  
-**Авторитет чисел:** `data_reviewed/tables_reviewed/*` (Level 1 + absolutes); `data/raw/snapshots/*` (exploratory); `regression_results_final.csv` (M1 appendix only); пересчёт в `notebooks/`
+**Авторитет чисел (ветка `report-20pp`):** `data_reviewed/tables_reviewed/*` (Level 1 + absolutes); `data/raw/snapshots/*` (exploratory); `regression_results_final.csv` (M1 appendix only); пересчёт в `notebooks/`
 
 ---
 

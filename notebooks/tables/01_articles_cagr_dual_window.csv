@@ -1,5 +1,0 @@
-var,country,window_t0,window_t1,v0,v1,CAGR,peak_year,peak_value,note
-scopus_articles,USA,2010,2021,407405.92,472375.0,0.0135420676463,2021.0,472375.0,dual-window; 2014-2024 NSF Indicators 2026 Fig.29; 2010 from prior WDI vintage retained
-scopus_articles,USA,2010,2024,407405.92,439892.0,0.0054949857383868,2021.0,472375.0,dual-window; 2014-2024 NSF Indicators 2026 Fig.29; 2010 from prior WDI vintage retained
-scopus_articles,CHN,2010,2021,307848.3,761535.0,0.0858238421241956,,,dual-window; 2014-2024 NSF Indicators 2026 Fig.29; 2010 from prior WDI vintage retained
-scopus_articles,CHN,2010,2024,307848.3,1078580.0,0.0936893211635656,,,dual-window; 2014-2024 NSF Indicators 2026 Fig.29; 2010 from prior WDI vintage retained

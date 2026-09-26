@@ -1,7 +1,0 @@
-PASS
-variant=a_intensity
-n=91 years=2010-2023
-var_exp_pc1=0.9074
-loadings={'gerd_pct_gdp': 0.5979514365297797, 'berd_pct_gdp': 0.5848588784708911, 'researchers_per_million': 0.5480822673885232}
-M2=OPTIONAL_SECONDARY_ONLY
-old_pca_loadings.csv=DO_NOT_USE

@@ -1,8 +1,0 @@
-{
-  "variable": "gerd_pct_gdp",
-  "source": "World Bank WDI",
-  "indicator": "GB.XPD.RSDV.GD.ZS",
-  "description": "R&D expenditure (% of GDP) - proxy for GERD",
-  "download_date": "2026-09-12T20:33:12.834373",
-  "status": "success"
-}

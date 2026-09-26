@@ -14,8 +14,8 @@ sys.path.insert(0, str(ROOT / "notebooks" / "deep"))
 from _common import load_panel, save_table, twfe, coef_table
 
 # %%
-# Reproduce old M1 on reviewed 8-country panel
-old = pd.read_csv(ROOT / "data_reviewed" / "core_panel_reviewed.csv")
+# Reproduce old M1 on reviewed 8-country panel (legacy bridge; full 20pp corpus on report-20pp)
+old = pd.read_csv(ROOT / "data" / "deep" / "legacy" / "core_panel_reviewed.csv")
 old = old.sort_values(["country_iso3", "year"])
 old["gerd_lag1"] = old.groupby("country_iso3")["gerd_pct_gdp"].shift(1)
 old["lres"] = np.log(old["researchers_per_million"])
@@ -25,7 +25,7 @@ res_old = smf.ols(
     "tfp_ctfp ~ gerd_lag1 + lres + C(country_iso3) + C(year)", data=est
 ).fit(cov_type="HC1")
 m1_rep = coef_table(res_old, ["gerd_lag1", "lres"], G=est["country_iso3"].nunique())
-m1_rep["note"] = "replication HC1 on core_panel_reviewed 2011-2023; expect gerd~0.027"
+m1_rep["note"] = "replication HC1 on data/deep/legacy/core_panel_reviewed 2011-2023; expect gerd~0.027"
 save_table(m1_rep, "D01_m1_replication")
 print(m1_rep)
 

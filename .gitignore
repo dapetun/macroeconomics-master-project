@@ -32,3 +32,8 @@ Thumbs.db
 .mypy_cache/
 .ruff_cache/
 .codex/
+
+# Implementation / audit temp (never commit)
+_impl_tmp/
+_review_tmp/
+_audit_research_notes.md

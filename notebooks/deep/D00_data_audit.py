@@ -38,7 +38,8 @@ fig.colorbar(im, ax=ax, fraction=0.03)
 save_fig(fig, "D00_missing_heatmap")
 
 # %%
-old = pd.read_csv(ROOT / "data_reviewed" / "core_panel_reviewed.csv")
+# Bridge to 20pp 8-country panel (kept under data/deep/legacy; full corpus on report-20pp)
+old = pd.read_csv(ROOT / "data" / "deep" / "legacy" / "core_panel_reviewed.csv")
 old = old[old["country_iso3"].isin(["USA", "CHN", "KOR", "JPN", "DEU", "GBR", "ISR", "FRA"])]
 rename = {
     "gerd_pct_gdp": "rd_gdp",

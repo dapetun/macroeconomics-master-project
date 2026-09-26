@@ -1,4 +1,0 @@
-variant,gate,n,year_min,year_max,n_countries,var_exp_pc1,loadings_json,selected
-a_intensity,PASS,91,2010,2023,7,0.907449657863722,"{'gerd_pct_gdp': 0.5979514365297797, 'berd_pct_gdp': 0.5848588784708911, 'researchers_per_million': 0.5480822673885232}",True
-b_logged_volumes,PASS,96,2010,2021,8,0.9199578395431439,"{'log_articles': 0.5548233592647106, 'log_patents_resident': 0.590755051636617, 'log_patents_total': 0.5858152515768432}",False
-c_within_z_intensity,PASS,91,2010,2023,7,0.9124423308588951,"{'wz_gerd_pct_gdp': 0.571480016330728, 'wz_berd_pct_gdp': 0.5969959139972084, 'wz_researchers_per_million': 0.5630332757531024}",False

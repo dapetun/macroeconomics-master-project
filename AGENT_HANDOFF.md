@@ -27,9 +27,11 @@
 - `data/deep/panel_oecd_chn.csv` и запуск `scripts/deep/build_panel.py`.
 - `data/raw/deep/top500/*`, `data/raw/deep/epoch/*`. Перезаписывать можно только `data/raw/deep/comtrade/*` в Stage 6.
 - Таблицы гипотез H1–H7 и раздел «Ожидания Даниила» в `DEEP_RQ_AND_HYPOTHESES.md`.
-- `METHODOLOGY_OPTIONS.md`, `APPROVED_METHOD_SET.md`, `DEEP_RESEARCH_PLAN.md`, `DEEP_REVIEW.md`, `DEEP_LITERATURE_NOTES.md`, старые ноутбуки `notebooks/0*.ipynb`, папки `data_reviewed/`, `results/` вне `results/deep/`.
+- `METHODOLOGY_OPTIONS.md`, `APPROVED_METHOD_SET.md`, `DEEP_RESEARCH_PLAN.md`, `DEEP_REVIEW.md`, `DEEP_LITERATURE_NOTES.md` (не переписывать без решения Даниила).
 - `notebooks/deep/_common.py` (не меняется); `D04_rd_tfp_frontier.py` (не меняется, кроме необязательного пункта 8b(2) — добавление столбца `within_r2`).
 - Не коммитить: `_audit_research_notes.md`, `_review_tmp/`, `_impl_tmp/`.
+
+**Корпус 20-стр. отчёта (8 стран, Frozen RQ, M1/PCA)** живёт в ветке `report-20pp`, не в рабочем дереве `deep-research`. Не копировать его сюда и не смешивать с `DEEP_*` / `results/deep/`.
 
 ## 4. Вопрос исследования
 
