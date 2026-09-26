@@ -112,10 +112,10 @@
 [ ] Независимая переоценка H2 split, H1 rd_gdp, Хаусмана (коэффициенты до 1e-6, SE ±10 %)
 [ ] N, G, выборка Китая проверены
 [ ] Строки журнала без причинных утверждений; пометка «H2 выбран после расчётов» есть
-[ ] reviews/S4_ECONOMETRICS_REVIEW.md: PASS / PASS WITH NOTES / FAIL
-[ ] При FAIL → DP-4 (стоп перед S7), исправление коммитом вперёд
-[ ] Commit (оркестратор): docs: add independent econometrics review for stages 1-3
-[ ] Тег impl-s4-ok
+[x] reviews/S4_ECONOMETRICS_REVIEW.md: PASS / PASS WITH NOTES / FAIL — PASS WITH NOTES
+[x] При FAIL → DP-4 (стоп перед S7), исправление коммитом вперёд
+[x] Commit (оркестратор): docs: add independent econometrics review for stages 1-3
+[x] Тег impl-s4-ok
 ```
 
 ## Stage 5 — TOP500 [Critical]
@@ -156,17 +156,17 @@
 ## Stage 7 — Вердикты D10/D11 из таблиц [Core]
 Субагент: Claude Sonnet 5, High Thinking. Старт только при наличии impl-s4-ok И impl-s6-ok.
 ```text
-[ ] Блок контроля субагента
-[ ] D10: import numpy; split_* для H2; n_specs_beta3_negative, n_specs_total, beta3_five_year для H3
-[ ] D11: функции tbl/coef; правила H1–H7 ровно по плану; prediction/type дословно
-[ ] D11 ladder: уровни 3, 4, 7 для USA из таблиц
-[ ] python D10; python D11; jupytext ×2
-[ ] Ожидаемые вердикты: H1 смешанно…США; H2 согласуется для объёма…слабая; H3 не согласуется (7 из 7);
+[x] Блок контроля субагента
+[x] D10: import numpy; split_* для H2; n_specs_beta3_negative, n_specs_total, beta3_five_year для H3
+[x] D11: функции tbl/coef; правила H1–H7 ровно по плану; prediction/type дословно
+[x] D11 ladder: уровни 3, 4, 7 для USA из таблиц
+[x] python D10; python D11; jupytext ×2
+[x] Ожидаемые вердикты: H1 смешанно…США; H2 согласуется для объёма…слабая; H3 не согласуется (7 из 7);
     H4 частично не согласуется; H5 по правилу; H6 согласуется частично [2010, 2013, 2014]; H7 согласуется, но хрупкий
-[ ] prediction идентичны прежним
-[ ] Нет причинных слов в result
-[ ] Checkpoint
-[ ] Commit: feat(synthesis): compute D10/D11 verdicts and claim ladder from result tables
+[x] prediction идентичны прежним
+[x] Нет причинных слов в result
+[x] Checkpoint
+[x] Commit: feat(synthesis): compute D10/D11 verdicts and claim ladder from result tables
 [ ] Тег impl-s7-ok
 ```
 

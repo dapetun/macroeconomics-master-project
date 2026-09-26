@@ -1,9 +1,9 @@
 level,claim,USA,CHN,strength
 1,наличие технологии / науки,measured/snapshot,measured/snapshot,средняя
 2,способность разработать,frontier models/compute (Epoch),open models volume,средняя (снимки)
-3,способность производить,equipment export (HS8486),нет fab capacity; net IC importer,слабая для fab
-4,масштабирование,TOP500 GPU systems,MVA/hitech shares; TOP500 rise-fall,средняя
+3,способность производить,"экспорт оборудования HS8486: 20.1 млрд $ (2023), 3-е место в выборке",нет fab capacity; net IC importer,слабая для fab
+4,масштабирование,"TOP500: доля мощности 55% (2024); эксафлопсных систем в данных: 4, из них в США: 3",MVA/hitech shares; TOP500 rise-fall,средняя
 5,внедрение,не измерено,не измерено,нет данных
 6,экономический эффект,growth accounting TFP share,growth accounting; R&D–TFP link not id.,ограниченная
-7,экспорт,IC/equipment trade,IC export large but net importer,высокая (trade)
+7,экспорт,торговля микросхемами и оборудованием (Comtrade 2010–2023),IC export large but net importer,высокая (trade)
 8,долгосрочное преимущество,не выводится,не выводится,нет
