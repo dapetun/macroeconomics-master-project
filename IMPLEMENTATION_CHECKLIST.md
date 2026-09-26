@@ -91,16 +91,16 @@
 ## Stage 3 — Хаусман, Солоу в п. п., имена в H7 [Core]
 Субагент: Claude Sonnet 5, High Thinking
 ```text
-[ ] Блок контроля субагента
-3A [ ] Новый блок Хаусмана в D01 → p_value > 0,1 (≈0,88); D01_ladder и D01_m1_replication идентичны
-   [ ] Строка REV-S3 (Хаусман); Commit: fix(D01): like-for-like classical Hausman test
-3B [ ] Столбцы *_pp и capital_share_of_growth в D05 → CHN g_A_pp 4,79 → 1,36
-   [ ] Старые столбцы и D05_tfp_share идентичны; строка REV-S3 (Солоу)
-   [ ] Commit: feat(H4): add growth contributions in percentage points
-3C [ ] note с именами в D08_lpm → Alibaba, DeepSeek, Baidu; числа D08 идентичны
-   [ ] Commit: chore(H7): record names of dropped Chinese organizations
-[ ] jupytext для D01, D05, D08
-[ ] Checkpoint
+[x] Блок контроля субагента
+3A [x] Новый блок Хаусмана в D01 → p_value > 0,1 (≈0,88); D01_ladder и D01_m1_replication идентичны
+   [x] Строка REV-S3 (Хаусман); Commit: fix(D01): like-for-like classical Hausman test
+3B [x] Столбцы *_pp и capital_share_of_growth в D05 → CHN g_A_pp 4,79 → 1,36
+   [x] Старые столбцы и D05_tfp_share идентичны; строка REV-S3 (Солоу)
+   [x] Commit: feat(H4): add growth contributions in percentage points
+3C [x] note с именами в D08_lpm → Alibaba, DeepSeek, Baidu; числа D08 идентичны
+   [x] Commit: chore(H7): record names of dropped Chinese organizations
+[x] jupytext для D01, D05, D08
+[x] Checkpoint
 [ ] Тег impl-s3-ok
 ```
 
