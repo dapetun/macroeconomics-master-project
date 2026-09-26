@@ -1,5 +1,7 @@
 # DEEP_RESULTS.md — результаты deep-research (черновик синтеза)
 
+> **Статус (2026-09-26):** идёт пересмотр по REVIEW_OF_METHODOLOGY_AUDIT.md. Числа и вердикты ниже будут обновлены в Stage 8 IMPLEMENTATION_PLAN.md. До этого ориентироваться на results/deep/tables/D11_hypothesis_verdicts.csv.
+
 **Ветка:** `deep-research`  
 **Дата:** 2026-09-25  
 **Панель:** 39 стран (OECD+Китай) × 2000–2023 (`data/deep/panel_oecd_chn.csv`)  
