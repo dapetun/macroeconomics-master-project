@@ -1,2 +1,0 @@
-beta_fe,beta_re,var_fe,var_re,hausman_stat,p_value,note
--0.049762461407465076,-0.02161457772290426,0.05930444867039135,0.02183316622575979,0.021144281813420474,0.8843865895508886,"classical Hausman, year dummies in both FE and RE, non-robust cov; FE chosen on substantive grounds, not by this test"

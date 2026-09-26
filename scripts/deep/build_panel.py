@@ -171,7 +171,7 @@ def main() -> None:
         ("country_iso3", "ISO3 country code", "panel", "code", "identity", "OECD+CHN"),
         ("year", "Calendar year", "panel", "year", "identity", "2000-2023"),
         ("rd_gdp", "GERD % GDP", "World Bank / OECD fill", "%", "level", "CHE often biennial"),
-        ("rd_ppp", "Оценка объёма R&D = доля R&D в ВВП × ВВП по ППС (не данные OECD)", "расчёт: World Bank rd_gdp × gdppc_ppp × pop", "USD PPP (постоянные цены)", "level", rd_note),
+        ("rd_ppp", "Оценка объёма R&D = доля R&D в ВВП × ВВП по ППС (не данные OECD)", "расчёт: World Bank rd_gdp × gdppc_ppp × pop", "USD PPP (постоянные цены)", "level", rd_note + "; в моделях не используется"),
         ("researchers_pm", "Researchers per million", "World Bank", "per mn", "level", "coverage gaps"),
         ("articles", "S&E articles count", "World Bank", "count", "level", "volume not quality"),
         ("pat_res", "Resident patent applications", "World Bank", "count", "office-basis", "not origin"),
@@ -179,7 +179,7 @@ def main() -> None:
         ("ctfp", "TFP relative to USA", "PWT", "index", "USA≈1", "gap = -ln(ctfp)"),
         ("dln_tfp", "TFP growth", "derived", "%", "Δln rtfpna×100", "noisy annually"),
         ("gap", "Distance to frontier", "derived", "log points", "-ln(ctfp)", "USA≈0"),
-        ("rd_stock", "R&D knowledge stock", "derived", "USD PPP", "PIM δ=0.15", "initial condition sensitive"),
+        ("rd_stock", "R&D knowledge stock", "derived", "USD PPP", "PIM δ=0.15", "в моделях не используется; initial condition sensitive"),
     ]
     pd.DataFrame(
         dictionary, columns=["name", "meaning", "source", "unit", "transform", "limitation"]

@@ -1,5 +1,5 @@
 # %% [markdown]
-# D08 — ИИ: открытые vs закрытые модели (H7)
+# D08 — ИИ: снимок notable models (без регрессии открытости)
 
 # %%
 from pathlib import Path
@@ -7,7 +7,6 @@ import sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import statsmodels.formula.api as smf
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "notebooks" / "deep"))
@@ -102,62 +101,5 @@ for g, col, lab in [("USA_only", COLOR_USA, "USA"), ("CHN_only", COLOR_CHN, "CHN
 style_axes(ax, title="Макс. log10(training compute)", ylabel="log10 FLOP")
 ax.legend()
 save_fig(fig, "D08_max_compute")
-
-# %%
-m = df[df.cgroup.isin(["USA_only", "CHN_only"]) & df.open.notna()].copy()
-m["is_chn"] = (m.cgroup == "CHN_only").astype(int)
-# LPM with FE
-res = smf.ols(
-    "open ~ is_chn + C(year) + C(domain) + C(org_type)", data=m
-).fit(cov_type="cluster", cov_kwds={"groups": m["organization"]})
-out = pd.DataFrame([{
-    "term": "is_chn",
-    "beta": float(res.params["is_chn"]),
-    "se": float(res.bse["is_chn"]),
-    "p": float(res.pvalues["is_chn"]),
-    "N": int(res.nobs),
-    "spec": "LPM_main",
-}])
-
-# robustness
-for name, subset in [
-    ("language_only", m[m.domain.str.contains("Language", case=False, na=False)]),
-    ("2020_2025", m[m.year >= 2020]),
-]:
-    if len(subset) < 30:
-        continue
-    r = smf.ols("open ~ is_chn + C(year) + C(domain) + C(org_type)", data=subset).fit(
-        cov_type="cluster", cov_kwds={"groups": subset["organization"]}
-    )
-    out = pd.concat([out, pd.DataFrame([{
-        "term": "is_chn", "beta": float(r.params["is_chn"]), "se": float(r.bse["is_chn"]),
-        "p": float(r.pvalues["is_chn"]), "N": int(r.nobs), "spec": name,
-    }])], ignore_index=True)
-
-# drop top Chinese open orgs
-top_cn = (
-    m[(m.is_chn == 1) & (m.open == 1)]
-    .groupby("organization").size().sort_values(ascending=False).head(3).index
-)
-m2 = m[~m.organization.isin(top_cn)]
-r = smf.ols("open ~ is_chn + C(year) + C(domain) + C(org_type)", data=m2).fit(
-    cov_type="cluster", cov_kwds={"groups": m2["organization"]}
-)
-out = pd.concat([out, pd.DataFrame([{
-    "term": "is_chn", "beta": float(r.params["is_chn"]), "se": float(r.bse["is_chn"]),
-    "p": float(r.pvalues["is_chn"]), "N": int(r.nobs), "spec": "drop_top3_cn_open",
-}])], ignore_index=True)
-
-out["note"] = ""
-out.loc[out.spec == "drop_top3_cn_open", "note"] = "dropped: " + ", ".join(top_cn)
-save_table(out, "D08_lpm")
-fig, ax = plt.subplots(figsize=(7, 3.5))
-y = np.arange(len(out))
-ax.errorbar(out.beta, y, xerr=1.96 * out.se, fmt="o")
-ax.axvline(0, color="gray")
-ax.set_yticks(y)
-ax.set_yticklabels(out.spec)
-style_axes(ax, title="LPM: P(open) и индикатор Китая", xlabel="beta (п.п.)")
-save_fig(fig, "D08_lpm_coef")
-print(out)
+print(desc.groupby("cgroup")[["n", "open_share"]].mean())
 print("D08 done")

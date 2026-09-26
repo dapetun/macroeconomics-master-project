@@ -90,13 +90,6 @@ for yname, ycol in [("dln_lp", "dln_lp")]:
     t["spec"] = yname
     robust.append(t)
 
-dd = panel.dropna(subset=["dln_tfp", "ln_rd_stock_lag1", "gap_c"])
-dd["rdstock_c"] = dd["ln_rd_stock_lag1"] - dd["ln_rd_stock_lag1"].mean()
-dd["rdstock_gap"] = dd["rdstock_c"] * dd["gap_c"]
-t = twfe(dd, "dln_tfp", ["rdstock_c", "gap_c", "rdstock_gap"])
-t["spec"] = "rd_stock"
-robust.append(t)
-
 dd = d[d.year < 2020]
 t = twfe(dd, "dln_tfp", ["rd_c", "gap_c", "rd_gap"])
 t["spec"] = "pre2020"

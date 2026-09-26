@@ -17,6 +17,8 @@ T = ROOT / "results" / "deep" / "tables"
 prev = pd.read_csv(T / "D11_hypothesis_verdicts.csv")
 pred = prev.set_index("H")["prediction"].to_dict()
 typ = prev.set_index("H")["type"].to_dict()
+pred["H2"] = "beta1>0: patents on R&D intensity, controlling for GDP"
+pred["H7"] = "not tested; Epoch snapshot of counts and open-weight shares"
 
 
 def tbl(name):
@@ -49,26 +51,26 @@ h1_result = (
     "Норма для CHN по населению — экстраполяция (D02_support_check)."
 )
 
-# H2
+# H2 — split only (intensity and GDP). Volume R&D is not estimated.
 sp = tbl("D03_all_specs")
-b_vol, p_vol = coef(sp, "main_lag1", "ln_rd_ppp_lag1")
 b_int, p_int = coef(sp, "main_split_intensity_gdp", "ln_rd_gdp_lag1")
 b_gdp, p_gdp = coef(sp, "main_split_intensity_gdp", "ln_gdp_lag1")
-b_nochn, _ = coef(sp, "no_chn", "ln_rd_ppp_lag1")
-int_clause = "значимая" if p_int < 0.05 else ("слабая (p<0,10)" if p_int < 0.10 else "не выявлена")
-h2_verdict = (
-    ("согласуется для объёма R&D" if (b_vol > 0 and p_vol < 0.05) else "неопределённо")
-    + f"; связь с интенсивностью R&D {int_clause}"
-)
+b_no, p_no = coef(sp, "no_chn", "ln_rd_gdp_lag1")
+b_art, p_art = coef(sp, "y_articles", "ln_rd_gdp_lag1")
+if b_int > 0 and p_int < 0.05:
+    h2_verdict = "согласуется"
+elif b_int > 0 and p_int < 0.10:
+    h2_verdict = "неопределённо; связь с долей R&D слабая (p<0,10)"
+else:
+    h2_verdict = "не согласуется"
 h2_result = (
-    f"Раздельная модель (основная): интенсивность R&D β={b_int:.2f}, p={p_int:.3f}; ВВП β={b_gdp:.2f}, p={p_gdp:.3f}. "
-    f"Объём R&D (доля×ВВП, прежняя основная): β={b_vol:.2f}, p={p_vol:.3f}; без CHN β={b_nochn:.2f}. "
-    "Значительная часть связи — общий рост экономики. Взаимодействие с CHN оценено по одной стране; p-value не используется."
+    f"Патенты на долю R&D и ВВП (лаг 1): доля R&D β={b_int:.2f}, p={p_int:.3f}; ВВП β={b_gdp:.2f}, p={p_gdp:.3f}. "
+    f"Без Китая доля R&D β={b_no:.2f}, p={p_no:.3f}. Статьи на ту же пару: доля R&D β={b_art:.2f}, p={p_art:.3f}."
 )
 
 # H3
 rb = tbl("D04_robustness")
-b3 = rb[rb.term.isin(["rd_gap", "rdstock_gap"])]
+b3 = rb[rb.term == "rd_gap"]
 b_m, p_m = coef(rb, "main", "rd_gap")
 b_5, p_5 = coef(rb, "five_year", "rd_gap")
 if b_m > 0 and p_m < 0.05:
@@ -136,17 +138,11 @@ h6_result = (
     "Нет списков 2012, 2016–2018, 2020–2021, 2023; подача систем добровольная."
 )
 
-# H7
-lpm = tbl("D08_lpm")
-b7, p7 = coef(lpm, "LPM_main", "is_chn")
-b7d, p7d = coef(lpm, "drop_top3_cn_open", "is_chn")
-names = str(lpm.loc[lpm.spec == "drop_top3_cn_open", "note"].iloc[0]).replace("dropped: ", "")
-h7_verdict = ("согласуется" if (b7 > 0 and p7 < 0.05) else "неопределённо") + (
-    ", но результат хрупкий" if p7d >= 0.05 else ""
-)
+# H7 — descriptive snapshot only. The openness regression is not used.
+h7_verdict = "не используется"
 h7_result = (
-    f"LPM: {100 * b7:+.0f} п.п. (p={p7:.3f}); без трёх организаций ({names}) {100 * b7d:+.0f} п.п. (p={p7d:.3f}). "
-    "Сильных выводов не делаем."
+    "Регрессия открытости не используется: она не удерживается без нескольких крупных лабораторий, "
+    "а состав базы Epoch нельзя дополнить. Остаются доли и число notable models в D08_descriptives, без коэффициента."
 )
 
 claims = pd.DataFrame([
@@ -203,8 +199,8 @@ claims = pd.DataFrame([
         "prediction": pred["H7"],
         "result": h7_result,
         "verdict": h7_verdict,
-        "evidence": "D08_lpm.csv",
-        "type": typ["H7"],
+        "evidence": "D08_descriptives.csv",
+        "type": "не используется (снимок)",
     },
 ])
 save_table(claims, "D11_hypothesis_verdicts")
@@ -225,7 +221,7 @@ lvl7_usa = "торговля микросхемами и оборудовани�
 
 ladder = pd.DataFrame([
     {"level": 1, "claim": "наличие технологии / науки", "USA": "measured/snapshot", "CHN": "measured/snapshot", "strength": "средняя"},
-    {"level": 2, "claim": "способность разработать", "USA": "frontier models/compute (Epoch)", "CHN": "open models volume", "strength": "средняя (снимки)"},
+    {"level": 2, "claim": "способность разработать", "USA": "снимок Epoch: frontier и compute", "CHN": "снимок Epoch: число и доля открытых весов, без теста", "strength": "слабая (отбор notable models)"},
     {"level": 3, "claim": "способность производить", "USA": lvl3_usa, "CHN": "нет fab capacity; net IC importer", "strength": "слабая для fab"},
     {"level": 4, "claim": "масштабирование", "USA": lvl4_usa, "CHN": "MVA/hitech shares; TOP500 rise-fall", "strength": "средняя"},
     {"level": 5, "claim": "внедрение", "USA": "не измерено", "CHN": "не измерено", "strength": "нет данных"},

@@ -1,6 +1,6 @@
 level,claim,USA,CHN,strength
 1,наличие технологии / науки,measured/snapshot,measured/snapshot,средняя
-2,способность разработать,frontier models/compute (Epoch),open models volume,средняя (снимки)
+2,способность разработать,снимок Epoch: frontier и compute,"снимок Epoch: число и доля открытых весов, без теста",слабая (отбор notable models)
 3,способность производить,"экспорт оборудования HS8486: 20.1 млрд $ (2023), 3-е место в выборке",нет fab capacity; net IC importer,слабая для fab
 4,масштабирование,"TOP500: доля мощности 55% (2024); эксафлопсных систем в данных: 4, из них в США: 3",MVA/hitech shares; TOP500 rise-fall,средняя
 5,внедрение,не измерено,не измерено,нет данных
