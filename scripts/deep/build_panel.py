@@ -171,7 +171,7 @@ def main() -> None:
         ("country_iso3", "ISO3 country code", "panel", "code", "identity", "OECD+CHN"),
         ("year", "Calendar year", "panel", "year", "identity", "2000-2023"),
         ("rd_gdp", "GERD % GDP", "World Bank / OECD fill", "%", "level", "CHE often biennial"),
-        ("rd_ppp", "GERD USD PPP constant-like", "OECD (+deflator if needed)", "mln USD PPP", "level", rd_note),
+        ("rd_ppp", "Оценка объёма R&D = доля R&D в ВВП × ВВП по ППС (не данные OECD)", "расчёт: World Bank rd_gdp × gdppc_ppp × pop", "USD PPP (постоянные цены)", "level", rd_note),
         ("researchers_pm", "Researchers per million", "World Bank", "per mn", "level", "coverage gaps"),
         ("articles", "S&E articles count", "World Bank", "count", "level", "volume not quality"),
         ("pat_res", "Resident patent applications", "World Bank", "count", "office-basis", "not origin"),

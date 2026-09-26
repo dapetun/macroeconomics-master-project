@@ -75,16 +75,16 @@
 ## Stage 2 — H2: раздельная спецификация [Core]
 Субагент: Claude Sonnet 5, High Thinking
 ```text
-[ ] Блок контроля субагента
-[ ] Сортировка панели + ln_rd_gdp_lag1, ln_gdp_lag1 в D03
-[ ] Спецификации main_split_intensity_gdp и volume_same_sample (первыми в specs)
-[ ] python D03; jupytext
-[ ] Проверка: β интенсивности ≈ 0,561 (p≈0,094), β ВВП ≈ 1,752 (p≈0,002), N = 734, G = 39, CHN = 21
-[ ] D03_all_specs: +3 строки, старые идентичны; D03_vif идентичен
-[ ] Строка rd_ppp в data_dictionary_deep.csv и кортеж в build_panel.py (build_panel НЕ запускать)
-[ ] Строка REV-S2 (с пометкой «выбор после расчётов»)
-[ ] Checkpoint
-[ ] Commit: feat(H2): add split specification (R&D intensity + GDP) as main; fix rd_ppp description
+[x] Блок контроля субагента
+[x] Сортировка панели + ln_rd_gdp_lag1, ln_gdp_lag1 в D03
+[x] Спецификации main_split_intensity_gdp и volume_same_sample (первыми в specs)
+[x] python D03; jupytext
+[x] Проверка: β интенсивности ≈ 0,561 (p≈0,094), β ВВП ≈ 1,752 (p≈0,002), N = 734, G = 39, CHN = 21
+[x] D03_all_specs: +3 строки, старые идентичны; D03_vif идентичен
+[x] Строка rd_ppp в data_dictionary_deep.csv и кортеж в build_panel.py (build_panel НЕ запускать)
+[x] Строка REV-S2 (с пометкой «выбор после расчётов»)
+[x] Checkpoint
+[x] Commit: feat(H2): add split specification (R&D intensity + GDP) as main; fix rd_ppp description
 [ ] Тег impl-s2-ok
 ```
 

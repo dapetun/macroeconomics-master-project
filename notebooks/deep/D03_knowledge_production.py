@@ -15,10 +15,22 @@ from _common import load_panel, save_table, save_fig, style_axes, twfe, within_d
 
 panel = load_panel().copy()
 panel["ln_rd_x_chn"] = panel["ln_rd_ppp_lag1"] * panel["is_chn"]
+panel = panel.sort_values(["country_iso3", "year"])
+panel["ln_rd_gdp_lag1"] = np.log(panel.groupby("country_iso3")["rd_gdp"].shift(1))
+panel["ln_gdp_lag1"] = np.log(panel.groupby("country_iso3")["gdp_ppp"].shift(1))
 
 # %%
 specs = []
-# main
+# main: R&D volume is intensity x GDP by construction, so the two parts are estimated separately
+d_split = panel.dropna(subset=["ln_pat_res", "ln_rd_gdp_lag1", "ln_gdp_lag1", "ln_rd_ppp_lag1"])
+t = twfe(d_split, "ln_pat_res", ["ln_rd_gdp_lag1", "ln_gdp_lag1"])
+t["spec"] = "main_split_intensity_gdp"
+specs.append(t)
+t = twfe(d_split, "ln_pat_res", ["ln_rd_ppp_lag1"])
+t["spec"] = "volume_same_sample"
+specs.append(t)
+
+# previous main (kept as a check: same model with the beta1=beta2 restriction)
 d = panel.dropna(subset=["ln_pat_res", "ln_rd_ppp_lag1"])
 t = twfe(d, "ln_pat_res", ["ln_rd_ppp_lag1"])
 t["spec"] = "main_lag1"
