@@ -119,25 +119,27 @@ save_table(ladder, "D01_ladder")
 print(ladder)
 
 # %%
-# Hausman FE vs RE on dln_tfp ~ rd_gdp_lag1
+# Classical Hausman: FE and RE with the same year dummies, non-robust covariance, 1 df
+from scipy import stats
+
 pdf = panel.set_index(["country_iso3", "year"])
 exog = pdf[["rd_gdp_lag1"]].copy()
 exog["const"] = 1.0
+yr = pd.get_dummies(pdf.index.get_level_values("year"), prefix="y", drop_first=True, dtype=float)
+yr.index = pdf.index
+exog = pd.concat([exog, yr], axis=1)
 y = pdf["dln_tfp"]
-fe = PanelOLS(y, exog, entity_effects=True, time_effects=True).fit(cov_type="clustered", cluster_entity=True)
-re = RandomEffects(y, exog).fit(cov_type="clustered", cluster_entity=True)
-# Simple Hausman statistic on rd coefficient
+fe = PanelOLS(y, exog, entity_effects=True).fit()
+re = RandomEffects(y, exog).fit()
 b_fe, b_re = float(fe.params["rd_gdp_lag1"]), float(re.params["rd_gdp_lag1"])
 v_fe, v_re = float(fe.cov.loc["rd_gdp_lag1", "rd_gdp_lag1"]), float(re.cov.loc["rd_gdp_lag1", "rd_gdp_lag1"])
 diff_v = v_fe - v_re
 hausman_stat = (b_fe - b_re) ** 2 / diff_v if diff_v > 0 else np.nan
 haus = pd.DataFrame([{
-    "beta_fe": b_fe,
-    "beta_re": b_re,
-    "var_fe": v_fe,
-    "var_re": v_re,
+    "beta_fe": b_fe, "beta_re": b_re, "var_fe": v_fe, "var_re": v_re,
     "hausman_stat": hausman_stat,
-    "note": "prefer FE if Hausman large; theory also favors FE (R&D correlated with country effects)",
+    "p_value": float(1 - stats.chi2.cdf(hausman_stat, 1)) if np.isfinite(hausman_stat) else np.nan,
+    "note": "classical Hausman, year dummies in both FE and RE, non-robust cov; FE chosen on substantive grounds, not by this test",
 }])
 save_table(haus, "D01_hausman")
 print(haus)
