@@ -217,10 +217,10 @@
 ## Stage 10 — Финальный независимый аудит [Critical, только чтение]
 Субагент: Claude Opus 5.5, High — новый агент, не участвовавший в реализации
 ```text
-[ ] Блок контроля субагента
-[ ] Передан handoff из IMPLEMENTATION_PLAN.md, Stage 10
-[ ] Проверены: код, данные, модели, интерпретация, воспроизводимость (отдельный worktree), A–E, решения Части 0
-[ ] POST_IMPLEMENTATION_AUDIT.md: ACCEPT / ACCEPT WITH FIXES / REJECT
-[ ] Commit (оркестратор): docs: add post-implementation methodological audit
+[x] Блок контроля субагента
+[x] Передан handoff из IMPLEMENTATION_PLAN.md, Stage 10
+[x] Проверены: код, данные, модели, интерпретация, воспроизводимость (S9; worktree Opus — не выполнен из‑за квоты), A–E, решения Части 0
+[x] POST_IMPLEMENTATION_AUDIT.md: ACCEPT WITH FIXES
+[x] Commit (оркестратор): docs: add post-implementation methodological audit
 [ ] Передать Даниилу для решения по замечаниям
 ```
