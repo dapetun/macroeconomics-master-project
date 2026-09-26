@@ -148,6 +148,8 @@ out = pd.concat([out, pd.DataFrame([{
     "p": float(r.pvalues["is_chn"]), "N": int(r.nobs), "spec": "drop_top3_cn_open",
 }])], ignore_index=True)
 
+out["note"] = ""
+out.loc[out.spec == "drop_top3_cn_open", "note"] = "dropped: " + ", ".join(top_cn)
 save_table(out, "D08_lpm")
 fig, ax = plt.subplots(figsize=(7, 3.5))
 y = np.arange(len(out))
