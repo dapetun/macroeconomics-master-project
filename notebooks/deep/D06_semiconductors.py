@@ -32,13 +32,13 @@ tot_x = tot.groupby(["country_iso3", "year"], as_index=False)["value_usd"].sum()
 piv = piv.merge(tot_x, on=["country_iso3", "year"], how="left")
 piv["ic_share"] = piv["ic_x"] / piv["total_x"]
 
-# RCA within sample
+# RCA relative to the sample (OECD + China), not to world trade
 ws = piv.dropna(subset=["ic_x", "total_x"]).groupby("year", as_index=False).agg(
     ic_x_sum=("ic_x", "sum"), total_x_sum=("total_x", "sum")
 )
-ws["world_ic_share"] = ws["ic_x_sum"] / ws["total_x_sum"]
-piv = piv.merge(ws[["year", "world_ic_share"]], on="year", how="left")
-piv["rca"] = piv["ic_share"] / piv["world_ic_share"]
+ws["sample_ic_share"] = ws["ic_x_sum"] / ws["total_x_sum"]
+piv = piv.merge(ws[["year", "sample_ic_share"]], on="year", how="left")
+piv["rca"] = piv["ic_share"] / piv["sample_ic_share"]
 save_table(piv, "D06_ic_trade_panel")
 
 # %%
@@ -56,13 +56,22 @@ save_fig(fig, "D06_china_ic_x_m")
 # %%
 # China import sources 2023
 src = chn_p[(chn_p.cmd.astype(str) == "8542") & (chn_p.year == 2023)].copy()
+total_m_2023 = float(src.loc[src.partner_code == 0, "value_usd"].sum())
+reimport_2023 = float(src.loc[src.partner_code == 156, "value_usd"].sum())
+save_table(pd.DataFrame([{"year": 2023, "total_m": total_m_2023, "reimport_156": reimport_2023,
+                          "reimport_share": reimport_2023 / total_m_2023}]), "D06_china_reimport_2023")
+src = src[src.partner_code != 0]
 src = src.sort_values("value_usd", ascending=False).head(12)
-# map partner codes if possible
-PARTNERS = {490: "Taiwan(490)", 410: "KOR", 392: "JPN", 842: "USA", 458: "MYS", 704: "VNM", 344: "HKG", 702: "SGP"}
+PARTNERS = {
+    490: "Тайвань", 410: "Корея", 392: "Япония", 842: "США", 458: "Малайзия",
+    704: "Вьетнам", 344: "Гонконг", 702: "Сингапур", 156: "Китай (реимпорт)",
+    608: "Филиппины", 764: "Таиланд", 372: "Ирландия", 276: "Германия",
+    360: "Индонезия", 528: "Нидерланды", 699: "Индия", 484: "Мексика", 376: "Израиль",
+}
 src["partner"] = src["partner_code"].map(lambda x: PARTNERS.get(int(x), str(int(x))))
 fig, ax = plt.subplots(figsize=(8, 4))
 ax.barh(src.partner[::-1], src.value_usd[::-1] / 1e9, color=COLOR_CHN)
-style_axes(ax, title="Импорт Китаем HS8542 по партнёрам, 2023 ($ млрд)", xlabel="$ млрд")
+style_axes(ax, title="Импорт Китаем HS8542 по партнёрам, 2023, без строки «Мир» ($ млрд)", xlabel="$ млрд")
 save_fig(fig, "D06_china_ic_sources_2023")
 save_table(src[["partner_code", "partner", "value_usd"]], "D06_china_ic_sources_2023")
 

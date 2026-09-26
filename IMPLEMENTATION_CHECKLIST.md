@@ -135,21 +135,21 @@
 ```
 
 ## Stage 6 — Comtrade: США и Бельгия [Critical, нужна сеть]
-Субагент: Claude Sonnet 5, High Thinking
+Субагент: Claude Sonnet 5, High Thinking (оркестратор выполнил из‑за лимита Other Models)
 ```text
-[ ] Блок контроля субагента
-[ ] load_reporters: пропуск записей с entryExpiredDate + assert USA=842, BEL=56
-[ ] python scripts/deep/download_comtrade.py --force (при неудаче: 1 повтор через час → DP-6a)
-[ ] _impl_tmp/check_comtrade.py: новые коды [56, 842]; 39 стран; CHN 2023 M≈350,1 / X≈136,3 млрд
-[ ] Расхождения старых стран >1 %: <5 % строк (иначе DP-6b)
-[ ] D06: sample_ic_share; D06_china_reimport_2023; убран partner 0; PARTNERS; заголовок
-[ ] python D06; jupytext
-[ ] Проверка: нет «голых» кодов; reimport_share ≈ 0,13; USA и BEL в таблицах; CHN ic_net < 0 все 14 лет
-[ ] Экономика: экспорт HS8486 США 2023 ≥ 1 млрд $ и в топ-5
-[ ] Записать для S7: место США, сумма, RCA CHN 2010 и 2023
-[ ] Строка REV-S6
-[ ] Checkpoint
-[ ] Commit: fix(H5): use current Comtrade reporter codes (USA 842, BEL 56), re-download; fix partner labels, add reimport share
+[x] Блок контроля субагента
+[x] load_reporters: пропуск записей с entryExpiredDate + assert USA=842, BEL=56
+[x] python scripts/deep/download_comtrade.py --force (при неудаче: 1 повтор через час → DP-6a)
+[x] _impl_tmp/check_comtrade.py: новые коды [56, 842]; 39 стран; CHN 2023 M≈350,1 / X≈136,3 млрд
+[x] Расхождения старых стран >1 %: <5 % строк (иначе DP-6b) — 0 строк >1%
+[x] D06: sample_ic_share; D06_china_reimport_2023; убран partner 0; PARTNERS; заголовок
+[x] python D06; jupytext
+[x] Проверка: нет «голых» кодов; reimport_share ≈ 0,13; USA и BEL в таблицах; CHN ic_net < 0 все 14 лет
+[x] Экономика: экспорт HS8486 США 2023 ≥ 1 млрд $ и в топ-5 — $20,1 млрд, 3-е место
+[x] Записать для S7: место США=3, сумма≈2.008e10; RCA CHN 2010≈1.11, 2023≈1.85
+[x] Строка REV-S6
+[x] Checkpoint
+[x] Commit: fix(H5): use current Comtrade reporter codes (USA 842, BEL 56), re-download; fix partner labels, add reimport share
 [ ] Тег impl-s6-ok
 ```
 

@@ -1,6 +1,7 @@
 reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_iso3
 36,490,2010,M,8542,94339558.0,H3,taiwan_mirror_490,AUS
 40,490,2010,M,8542,26013078.0,H3,taiwan_mirror_490,AUT
+56,490,2010,M,8542,12925721.185,H3,taiwan_mirror_490,BEL
 124,490,2010,M,8542,366206287.0,H3,taiwan_mirror_490,CAN
 152,490,2010,M,8542,5555538.433,H3,taiwan_mirror_490,CHL
 156,490,2010,M,8542,37114911013.0,H3,taiwan_mirror_490,CHN
@@ -32,6 +33,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2010,M,8542,1932824251.0,H2,taiwan_mirror_490,PHL
 616,490,2010,M,8542,102913885.0,H3,taiwan_mirror_490,POL
 620,490,2010,M,8542,39209229.0,H3,taiwan_mirror_490,PRT
+699,490,2010,M,8542,106810176.0,H3,taiwan_mirror_490,IND
 702,490,2010,M,8542,11053408494.207,H3,taiwan_mirror_490,SGP
 703,490,2010,M,8542,47749770.358,H3,taiwan_mirror_490,SVK
 704,490,2010,M,8542,162723500.0,H3,taiwan_mirror_490,VNM
@@ -42,8 +44,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2010,M,8542,1864279613.0,H3,taiwan_mirror_490,THA
 792,490,2010,M,8542,133407014.0,H3,taiwan_mirror_490,TUR
 826,490,2010,M,8542,98867347.0,H3,taiwan_mirror_490,GBR
+842,490,2010,M,8542,3168133199.0,H3,taiwan_mirror_490,USA
 36,490,2011,M,8542,65193174.0,H3,taiwan_mirror_490,AUS
 40,490,2011,M,8542,23379246.0,H3,taiwan_mirror_490,AUT
+56,490,2011,M,8542,9116498.21,H3,taiwan_mirror_490,BEL
 124,490,2011,M,8542,574283093.0,H3,taiwan_mirror_490,CAN
 152,490,2011,M,8542,3078332.216,H3,taiwan_mirror_490,CHL
 156,490,2011,M,8542,41060836356.0,H3,taiwan_mirror_490,CHN
@@ -75,6 +79,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2011,M,8542,761869918.0,H2,taiwan_mirror_490,PHL
 616,490,2011,M,8542,87504990.0,H3,taiwan_mirror_490,POL
 620,490,2011,M,8542,19155055.0,H3,taiwan_mirror_490,PRT
+699,490,2011,M,8542,258348089.0,H3,taiwan_mirror_490,IND
 702,490,2011,M,8542,13923238112.175,H3,taiwan_mirror_490,SGP
 703,490,2011,M,8542,51215482.306,H3,taiwan_mirror_490,SVK
 704,490,2011,M,8542,164367539.0,H3,taiwan_mirror_490,VNM
@@ -85,8 +90,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2011,M,8542,1998990231.0,H3,taiwan_mirror_490,THA
 792,490,2011,M,8542,144571987.0,H3,taiwan_mirror_490,TUR
 826,490,2011,M,8542,87477075.0,H3,taiwan_mirror_490,GBR
+842,490,2011,M,8542,3277888241.0,H3,taiwan_mirror_490,USA
 36,490,2012,M,8542,59752952.0,H4,taiwan_mirror_490,AUS
 40,490,2012,M,8542,24584236.463,H4,taiwan_mirror_490,AUT
+56,490,2012,M,8542,10107232.447,H4,taiwan_mirror_490,BEL
 124,490,2012,M,8542,333258877.0,H4,taiwan_mirror_490,CAN
 152,490,2012,M,8542,1926000.139,H4,taiwan_mirror_490,CHL
 156,490,2012,M,8542,50099962276.0,H4,taiwan_mirror_490,CHN
@@ -118,6 +125,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2012,M,8542,1923841749.0,H2,taiwan_mirror_490,PHL
 616,490,2012,M,8542,94129055.0,H4,taiwan_mirror_490,POL
 620,490,2012,M,8542,17855987.0,H4,taiwan_mirror_490,PRT
+699,490,2012,M,8542,216128023.0,H3,taiwan_mirror_490,IND
 702,490,2012,M,8542,16514876212.125,H4,taiwan_mirror_490,SGP
 703,490,2012,M,8542,65648209.575,H4,taiwan_mirror_490,SVK
 704,490,2012,M,8542,355852803.0,H4,taiwan_mirror_490,VNM
@@ -128,8 +136,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2012,M,8542,1995946610.0,H4,taiwan_mirror_490,THA
 792,490,2012,M,8542,137106476.0,H4,taiwan_mirror_490,TUR
 826,490,2012,M,8542,96950191.0,H4,taiwan_mirror_490,GBR
+842,490,2012,M,8542,3168413886.0,H4,taiwan_mirror_490,USA
 36,490,2013,M,8542,53952176.0,H4,taiwan_mirror_490,AUS
 40,490,2013,M,8542,26800219.315,H4,taiwan_mirror_490,AUT
+56,490,2013,M,8542,14888830.468,H4,taiwan_mirror_490,BEL
 124,490,2013,M,8542,556597421.0,H4,taiwan_mirror_490,CAN
 152,490,2013,M,8542,3403950.372,H4,taiwan_mirror_490,CHL
 156,490,2013,M,8542,72161625842.0,H4,taiwan_mirror_490,CHN
@@ -161,6 +171,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2013,M,8542,1913101607.0,H2,taiwan_mirror_490,PHL
 616,490,2013,M,8542,111715759.0,H4,taiwan_mirror_490,POL
 620,490,2013,M,8542,5338780.0,H4,taiwan_mirror_490,PRT
+699,490,2013,M,8542,179043031.0,H4,taiwan_mirror_490,IND
 702,490,2013,M,8542,20060147013.366,H4,taiwan_mirror_490,SGP
 703,490,2013,M,8542,98539705.713,H4,taiwan_mirror_490,SVK
 704,490,2013,M,8542,520782546.0,H4,taiwan_mirror_490,VNM
@@ -171,8 +182,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2013,M,8542,1813280243.0,H4,taiwan_mirror_490,THA
 792,490,2013,M,8542,122004614.0,H4,taiwan_mirror_490,TUR
 826,490,2013,M,8542,110071551.0,H4,taiwan_mirror_490,GBR
+842,490,2013,M,8542,3526281033.0,H4,taiwan_mirror_490,USA
 36,490,2014,M,8542,67203848.0,H4,taiwan_mirror_490,AUS
 40,490,2014,M,8542,24213966.684,H4,taiwan_mirror_490,AUT
+56,490,2014,M,8542,14894836.43,H4,taiwan_mirror_490,BEL
 124,490,2014,M,8542,293517667.0,H4,taiwan_mirror_490,CAN
 152,490,2014,M,8542,845782.223,H4,taiwan_mirror_490,CHL
 156,490,2014,M,8542,66652059308.0,H4,taiwan_mirror_490,CHN
@@ -204,6 +217,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2014,M,8542,1378849680.0,H2,taiwan_mirror_490,PHL
 616,490,2014,M,8542,130325452.0,H4,taiwan_mirror_490,POL
 620,490,2014,M,8542,15697509.0,H4,taiwan_mirror_490,PRT
+699,490,2014,M,8542,161974159.0,H4,taiwan_mirror_490,IND
 702,490,2014,M,8542,21984446839.192,H4,taiwan_mirror_490,SGP
 703,490,2014,M,8542,117593318.188,H4,taiwan_mirror_490,SVK
 704,490,2014,M,8542,979563291.0,H4,taiwan_mirror_490,VNM
@@ -214,8 +228,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2014,M,8542,2207750958.0,H4,taiwan_mirror_490,THA
 792,490,2014,M,8542,140153818.0,H4,taiwan_mirror_490,TUR
 826,490,2014,M,8542,134869792.0,H4,taiwan_mirror_490,GBR
+842,490,2014,M,8542,3978464080.0,H4,taiwan_mirror_490,USA
 36,490,2015,M,8542,63245706.0,H4,taiwan_mirror_490,AUS
 40,490,2015,M,8542,32908827.152,H4,taiwan_mirror_490,AUT
+56,490,2015,M,8542,13544174.026,H4,taiwan_mirror_490,BEL
 124,490,2015,M,8542,252641038.748,H4,taiwan_mirror_490,CAN
 152,490,2015,M,8542,1066501.111,H4,taiwan_mirror_490,CHL
 156,490,2015,M,8542,68585248108.0,H4,taiwan_mirror_490,CHN
@@ -247,6 +263,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2015,M,8542,2914384877.0,H2,taiwan_mirror_490,PHL
 616,490,2015,M,8542,129349873.0,H4,taiwan_mirror_490,POL
 620,490,2015,M,8542,18462283.369,H4,taiwan_mirror_490,PRT
+699,490,2015,M,8542,144169513.0,H4,taiwan_mirror_490,IND
 702,490,2015,M,8542,18453542196.993,H4,taiwan_mirror_490,SGP
 703,490,2015,M,8542,77543967.864,H4,taiwan_mirror_490,SVK
 704,490,2015,M,8542,1529887194.0,H4,taiwan_mirror_490,VNM
@@ -257,8 +274,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2015,M,8542,2465589564.13,H4,taiwan_mirror_490,THA
 792,490,2015,M,8542,141425812.0,H4,taiwan_mirror_490,TUR
 826,490,2015,M,8542,133900296.0,H4,taiwan_mirror_490,GBR
+842,490,2015,M,8542,3710301314.0,H4,taiwan_mirror_490,USA
 36,490,2016,M,8542,61186929.0,H4,taiwan_mirror_490,AUS
 40,490,2016,M,8542,46833210.3,H4,taiwan_mirror_490,AUT
+56,490,2016,M,8542,19827574.025,H4,taiwan_mirror_490,BEL
 124,490,2016,M,8542,261695006.855,H4,taiwan_mirror_490,CAN
 152,490,2016,M,8542,434883.294,H4,taiwan_mirror_490,CHL
 156,490,2016,M,8542,72999992849.0,H4,taiwan_mirror_490,CHN
@@ -290,6 +309,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2016,M,8542,2733953600.0,H2,taiwan_mirror_490,PHL
 616,490,2016,M,8542,152136197.0,H4,taiwan_mirror_490,POL
 620,490,2016,M,8542,88194024.949,H4,taiwan_mirror_490,PRT
+699,490,2016,M,8542,139530808.0,H4,taiwan_mirror_490,IND
 702,490,2016,M,8542,17035831169.865,H4,taiwan_mirror_490,SGP
 703,490,2016,M,8542,62379726.663,H4,taiwan_mirror_490,SVK
 704,490,2016,M,8542,2115098527.74,H4,taiwan_mirror_490,VNM
@@ -300,8 +320,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2016,M,8542,2280655915.33,H4,taiwan_mirror_490,THA
 792,490,2016,M,8542,157876807.0,H4,taiwan_mirror_490,TUR
 826,490,2016,M,8542,95048212.0,H4,taiwan_mirror_490,GBR
+842,490,2016,M,8542,3482712697.0,H4,taiwan_mirror_490,USA
 36,490,2017,M,8542,63679132.711,H5,taiwan_mirror_490,AUS
 40,490,2017,M,8542,82849574.83,H5,taiwan_mirror_490,AUT
+56,490,2017,M,8542,34733300.682,H5,taiwan_mirror_490,BEL
 124,490,2017,M,8542,277511764.248,H5,taiwan_mirror_490,CAN
 152,490,2017,M,8542,1089788.794,H5,taiwan_mirror_490,CHL
 156,490,2017,M,8542,81248576979.0,H5,taiwan_mirror_490,CHN
@@ -333,6 +355,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2017,M,8542,2879275070.0,H4,taiwan_mirror_490,PHL
 616,490,2017,M,8542,187591577.0,H5,taiwan_mirror_490,POL
 620,490,2017,M,8542,190296228.741,H5,taiwan_mirror_490,PRT
+699,490,2017,M,8542,201181309.373,H5,taiwan_mirror_490,IND
 702,490,2017,M,8542,20365463776.526,H4,taiwan_mirror_490,SGP
 703,490,2017,M,8542,72318632.681,H5,taiwan_mirror_490,SVK
 704,490,2017,M,8542,3128150679.5,H4,taiwan_mirror_490,VNM
@@ -343,8 +366,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2017,M,8542,2981502436.95,H5,taiwan_mirror_490,THA
 792,490,2017,M,8542,225147398.0,H5,taiwan_mirror_490,TUR
 826,490,2017,M,8542,105219071.271,H5,taiwan_mirror_490,GBR
+842,490,2017,M,8542,3906796721.0,H5,taiwan_mirror_490,USA
 36,490,2018,M,8542,100419881.873,H5,taiwan_mirror_490,AUS
 40,490,2018,M,8542,104508378.941,H5,taiwan_mirror_490,AUT
+56,490,2018,M,8542,28919654.466,H5,taiwan_mirror_490,BEL
 124,490,2018,M,8542,287307534.094,H5,taiwan_mirror_490,CAN
 152,490,2018,M,8542,1164344.328,H5,taiwan_mirror_490,CHL
 156,490,2018,M,8542,97560858947.0,H5,taiwan_mirror_490,CHN
@@ -376,6 +401,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2018,M,8542,3275083654.39,H4,taiwan_mirror_490,PHL
 616,490,2018,M,8542,236627847.0,H5,taiwan_mirror_490,POL
 620,490,2018,M,8542,222970551.005,H5,taiwan_mirror_490,PRT
+699,490,2018,M,8542,160512763.8,H5,taiwan_mirror_490,IND
 702,490,2018,M,8542,24076049835.112,H5,taiwan_mirror_490,SGP
 703,490,2018,M,8542,83822239.175,H5,taiwan_mirror_490,SVK
 704,490,2018,M,8542,3061592996.84,H5,taiwan_mirror_490,VNM
@@ -386,8 +412,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2018,M,8542,3395166874.86,H5,taiwan_mirror_490,THA
 792,490,2018,M,8542,177789821.0,H5,taiwan_mirror_490,TUR
 826,490,2018,M,8542,109608340.327,H5,taiwan_mirror_490,GBR
+842,490,2018,M,8542,4202253423.0,H5,taiwan_mirror_490,USA
 36,490,2019,M,8542,221394257.498,H5,taiwan_mirror_490,AUS
 40,490,2019,M,8542,117293187.85,H5,taiwan_mirror_490,AUT
+56,490,2019,M,8542,198819726.801,H5,taiwan_mirror_490,BEL
 124,490,2019,M,8542,293888749.057,H5,taiwan_mirror_490,CAN
 152,490,2019,M,8542,1525114.794,H5,taiwan_mirror_490,CHL
 156,490,2019,M,8542,99297226729.0,H5,taiwan_mirror_490,CHN
@@ -419,6 +447,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2019,M,8542,2538699187.0,H5,taiwan_mirror_490,PHL
 616,490,2019,M,8542,199547614.0,H5,taiwan_mirror_490,POL
 620,490,2019,M,8542,228069166.64,H5,taiwan_mirror_490,PRT
+699,490,2019,M,8542,93289756.04,H5,taiwan_mirror_490,IND
 702,490,2019,M,8542,24736231790.752,H5,taiwan_mirror_490,SGP
 703,490,2019,M,8542,70504907.166,H5,taiwan_mirror_490,SVK
 704,490,2019,M,8542,4939126008.57,H5,taiwan_mirror_490,VNM
@@ -429,8 +458,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2019,M,8542,3429520177.726,H5,taiwan_mirror_490,THA
 792,490,2019,M,8542,172382806.0,H5,taiwan_mirror_490,TUR
 826,490,2019,M,8542,134838523.044,H5,taiwan_mirror_490,GBR
+842,490,2019,M,8542,3701644149.0,H5,taiwan_mirror_490,USA
 36,490,2020,M,8542,109758518.767,H5,taiwan_mirror_490,AUS
 40,490,2020,M,8542,117034967.011,H5,taiwan_mirror_490,AUT
+56,490,2020,M,8542,242072188.58,H5,taiwan_mirror_490,BEL
 124,490,2020,M,8542,268308111.863,H5,taiwan_mirror_490,CAN
 152,490,2020,M,8542,2302774.974,H5,taiwan_mirror_490,CHL
 156,490,2020,M,8542,124037101292.0,H5,taiwan_mirror_490,CHN
@@ -462,6 +493,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2020,M,8542,2679106879.0,H5,taiwan_mirror_490,PHL
 616,490,2020,M,8542,370913541.0,H5,taiwan_mirror_490,POL
 620,490,2020,M,8542,243397459.352,H5,taiwan_mirror_490,PRT
+699,490,2020,M,8542,421798088.277,H5,taiwan_mirror_490,IND
 702,490,2020,M,8542,30173350173.883,H5,taiwan_mirror_490,SGP
 703,490,2020,M,8542,62557763.508,H5,taiwan_mirror_490,SVK
 704,490,2020,M,8542,6729233145.69,H5,taiwan_mirror_490,VNM
@@ -472,8 +504,10 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2020,M,8542,3919508783.225,H5,taiwan_mirror_490,THA
 792,490,2020,M,8542,174010059.0,H5,taiwan_mirror_490,TUR
 826,490,2020,M,8542,168150871.926,H5,taiwan_mirror_490,GBR
+842,490,2020,M,8542,3690108918.0,H5,taiwan_mirror_490,USA
 36,490,2021,M,8542,115285727.528,H5,taiwan_mirror_490,AUS
 40,490,2021,M,8542,192059492.219,H5,taiwan_mirror_490,AUT
+56,490,2021,M,8542,381097467.407,H5,taiwan_mirror_490,BEL
 124,490,2021,M,8542,409364658.765,H5,taiwan_mirror_490,CAN
 152,490,2021,M,8542,1781095.571,H5,taiwan_mirror_490,CHL
 156,490,2021,M,8542,154732807649.0,H5,taiwan_mirror_490,CHN
@@ -505,6 +539,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 608,490,2021,M,8542,3067577985.0,H5,taiwan_mirror_490,PHL
 616,490,2021,M,8542,470984167.0,H5,taiwan_mirror_490,POL
 620,490,2021,M,8542,170426290.807,H5,taiwan_mirror_490,PRT
+699,490,2021,M,8542,557586817.089,H5,taiwan_mirror_490,IND
 702,490,2021,M,8542,42618342809.512,H5,taiwan_mirror_490,SGP
 703,490,2021,M,8542,89486843.864,H5,taiwan_mirror_490,SVK
 704,490,2021,M,8542,8108474315.85,H5,taiwan_mirror_490,VNM
@@ -515,6 +550,7 @@ reporter_code,partner_code,year,flow,cmd,value_usd,classification,note,country_i
 764,490,2021,M,8542,4615399291.415,H5,taiwan_mirror_490,THA
 792,490,2021,M,8542,230406241.0,H5,taiwan_mirror_490,TUR
 826,490,2021,M,8542,219635977.536,H5,taiwan_mirror_490,GBR
+842,490,2021,M,8542,5388296033.0,H5,taiwan_mirror_490,USA
 36,490,2022,M,8542,134402078.526,H6,taiwan_mirror_490,AUS
 40,490,2022,M,8542,272443028.243,H6,taiwan_mirror_490,AUT
 124,490,2022,M,8542,632135784.523,H6,taiwan_mirror_490,CAN

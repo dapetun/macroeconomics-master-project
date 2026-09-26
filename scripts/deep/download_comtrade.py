@@ -35,6 +35,8 @@ def load_reporters() -> dict[str, int]:
     rows = data if isinstance(data, list) else data.get("results", data.get("data", []))
     mapping = {}
     for x in rows:
+        if x.get("entryExpiredDate"):
+            continue
         iso = x.get("reporterCodeIsoAlpha3") or x.get("iso3") or x.get("id")
         code = x.get("reporterCode") or x.get("code")
         if iso and code is not None:
@@ -45,6 +47,7 @@ def load_reporters() -> dict[str, int]:
     mapping.setdefault("NOR", 579)
     mapping.setdefault("USA", 842)
     mapping.setdefault("CHN", 156)
+    assert mapping.get("USA") == 842 and mapping.get("BEL") == 56, (mapping.get("USA"), mapping.get("BEL"))
     return mapping
 
 
