@@ -1,22 +1,26 @@
 # %% [markdown]
-# D03 — Функция производства знаний: доля R&D и ВВП → патенты (H2)
+# D03 — Производство знаний: доля R&D и ВВП → патенты (H2)
+# Knowledge production: R&D intensity and GDP → patents (H2)
 
 # %%
 from pathlib import Path
 import sys
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notebooks" / "deep"))
-from _common import load_panel, save_table, save_fig, style_axes, twfe, within_demean
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep import (
+    apply_hse_style,  # noqa: E402
+    load_panel, save_table, save_fig, style_axes, twfe, within_demean, NAVY, GRAY, BLUE,
+)
 
-panel = load_panel().copy()
-panel = panel.sort_values(["country_iso3", "year"])
+apply_hse_style()
+
+panel = load_panel().sort_values(["country_iso3", "year"]).copy()
 panel["ln_rd_gdp_lag1"] = np.log(panel.groupby("country_iso3")["rd_gdp"].shift(1))
 panel["ln_gdp_lag1"] = np.log(panel.groupby("country_iso3")["gdp_ppp"].shift(1))
-
 X = ["ln_rd_gdp_lag1", "ln_gdp_lag1"]
 
 # %%
@@ -41,24 +45,24 @@ save_table(all_specs, "D03_all_specs")
 
 # %%
 plot = all_specs[all_specs.term == "ln_rd_gdp_lag1"].copy()
-fig, ax = plt.subplots(figsize=(8, 3.2))
+spec_labels = {
+    "main_split_intensity_gdp": "Основная: патенты",
+    "no_chn": "Без Китая: патенты",
+    "y_articles": "Статьи",
+}
+fig, ax = plt.subplots(figsize=(6.4, 3.4))
 y = np.arange(len(plot))
-ax.errorbar(plot.beta, y, xerr=1.96 * plot.se, fmt="o", color="black")
-ax.axvline(0, color="gray")
+ax.errorbar(plot.beta, y, xerr=1.96 * plot.se, fmt="o", color=NAVY, ms=8, capsize=4, elinewidth=1.6)
+ax.axvline(0, color=GRAY)
 ax.set_yticks(y)
-ax.set_yticklabels(plot.spec, fontsize=9)
-style_axes(ax, title="Эластичность по доле R&D (лаг 1), при контроле ВВП", xlabel="beta")
+ax.set_yticklabels([spec_labels.get(s, s) for s in plot.spec])
+style_axes(ax, xlabel="коэффициент")
 save_fig(fig, "D03_coefplot")
 
 w = within_demean(d_split, ["ln_pat_res", "ln_rd_gdp_lag1"], ["country_iso3", "year"])
-fig, ax = plt.subplots(figsize=(6, 5))
-ax.scatter(w["ln_rd_gdp_lag1_within"], w["ln_pat_res_within"], s=8, alpha=0.4)
-style_axes(
-    ax,
-    title="Within: патенты и доля R&D",
-    xlabel="ln(доля R&D), лаг 1, within",
-    ylabel="ln patents within",
-)
+fig, ax = plt.subplots(figsize=(6.4, 4.2))
+ax.scatter(w["ln_rd_gdp_lag1_within"], w["ln_pat_res_within"], s=22, alpha=0.45, color=BLUE, edgecolors="none")
+style_axes(ax, xlabel="логарифм доли R&D, лаг 1 год", ylabel="логарифм патентов")
 save_fig(fig, "D03_within_scatter")
 print(all_specs)
 print("D03 done")

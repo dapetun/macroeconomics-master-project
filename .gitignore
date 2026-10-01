@@ -37,3 +37,12 @@ Thumbs.db
 _impl_tmp/
 _review_tmp/
 _audit_research_notes.md
+results/_baseline_tables/
+
+# Local packaging
+*.egg-info/
+src/*.egg-info/
+
+# uv lockfile is a local resolver artifact; use requirements-deep.txt for pins
+uv.lock
+

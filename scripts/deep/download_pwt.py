@@ -1,8 +1,9 @@
-"""Download Penn World Table series from open-numbers mirror."""
+"""Загрузка Penn World Table (open-numbers). / Download Penn World Table (open-numbers)."""
 from __future__ import annotations
 
 import hashlib
 import json
+import sys
 import time
 from datetime import date
 from pathlib import Path
@@ -10,18 +11,15 @@ from pathlib import Path
 import pandas as pd
 import requests
 
-ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep.paths import COUNTRIES as COUNTRIES_ISO3, ROOT  # noqa: E402
+
 OUT = ROOT / "data" / "raw" / "deep" / "pwt"
 OUT.mkdir(parents=True, exist_ok=True)
 
 BASE = "https://raw.githubusercontent.com/open-numbers/ddf--pwt--penn_world_table/master/"
 VARS = ["rtfpna", "ctfp", "rgdpna", "rnna", "emp", "hc", "labsh", "pop"]
-COUNTRIES = {
-    "aus", "aut", "bel", "can", "chl", "col", "cri", "cze", "dnk", "est",
-    "fin", "fra", "deu", "grc", "hun", "isl", "irl", "isr", "ita", "jpn",
-    "kor", "lva", "ltu", "lux", "mex", "nld", "nzl", "nor", "pol", "prt",
-    "svk", "svn", "esp", "swe", "che", "tur", "gbr", "usa", "chn",
-}
+COUNTRIES = {c.lower() for c in COUNTRIES_ISO3}
 
 
 def fetch(var: str) -> pd.DataFrame:

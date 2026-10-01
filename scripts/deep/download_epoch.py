@@ -1,15 +1,18 @@
-"""Download Epoch AI notable models snapshot."""
+"""Загрузка Epoch AI notable models. / Download Epoch AI notable models."""
 from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from datetime import date
 from pathlib import Path
 
 import requests
 
-ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "data" / "raw" / "deep" / "epoch"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep.paths import RAW_DEEP, ROOT  # noqa: E402
+
+OUT = RAW_DEEP / "epoch"
 OUT.mkdir(parents=True, exist_ok=True)
 URL = "https://epoch.ai/data/notable_ai_models.csv"
 
@@ -32,12 +35,11 @@ def main(force: bool = False) -> None:
         "n_bytes": len(r.content),
         "sha256": hashlib.sha256(r.content).hexdigest(),
         "snapshot_file": path.name,
+        "root": str(ROOT),
     }
     (OUT / "manifest.json").write_text(json.dumps(man, indent=2), encoding="utf-8")
     print("wrote", path, len(r.content))
 
 
 if __name__ == "__main__":
-    import sys
-
     main(force="--force" in sys.argv)

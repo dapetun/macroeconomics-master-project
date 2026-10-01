@@ -6,4 +6,4 @@ list_year,iso,Name,rmax_tflops,arch
 2025,USA,El Capitan,1809000.0,AMD
 2025,USA,Frontier,1353000.0,AMD
 2025,USA,Aurora,1012000.0,Other_accel
-2025,Germany,JUPITER Booster,1000000.0,Other_accel
+2025,Germany,JUPITER Booster,1000000.0,NVIDIA

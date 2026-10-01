@@ -1,8 +1,9 @@
-"""Download World Bank WDI indicators for OECD+China panel."""
+"""Загрузка WDI (World Bank) для панели OECD+Китай. / Download WDI for OECD+China."""
 from __future__ import annotations
 
 import hashlib
 import json
+import sys
 import time
 from datetime import date
 from pathlib import Path
@@ -10,16 +11,11 @@ from pathlib import Path
 import pandas as pd
 import requests
 
-ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep.paths import COUNTRIES, ROOT  # noqa: E402
+
 OUT = ROOT / "data" / "raw" / "deep" / "wb"
 OUT.mkdir(parents=True, exist_ok=True)
-
-COUNTRIES = [
-    "AUS", "AUT", "BEL", "CAN", "CHL", "COL", "CRI", "CZE", "DNK", "EST",
-    "FIN", "FRA", "DEU", "GRC", "HUN", "ISL", "IRL", "ISR", "ITA", "JPN",
-    "KOR", "LVA", "LTU", "LUX", "MEX", "NLD", "NZL", "NOR", "POL", "PRT",
-    "SVK", "SVN", "ESP", "SWE", "CHE", "TUR", "GBR", "USA", "CHN",
-]
 
 INDICATORS = {
     "GB.XPD.RSDV.GD.ZS": "rd_gdp",

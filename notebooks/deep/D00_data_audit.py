@@ -1,16 +1,21 @@
 # %% [markdown]
-# D00 — Аудит панели OECD+China
+# D00 — Аудит панели OECD+China / OECD+China panel audit
 
 # %%
 from pathlib import Path
 import sys
-import numpy as np
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notebooks" / "deep"))
-from _common import load_panel, save_table, save_fig, style_axes, COUNTRIES
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep import (
+    apply_hse_style,  # noqa: E402
+    ROOT, load_panel, save_table, save_fig, style_axes,
+    VAR_LABELS_SHORT, CMAP_NAVY, NAVY, FIGSIZE_SQUARE,
+)
+
+apply_hse_style()
 
 panel = load_panel()
 print(panel.shape, panel["country_iso3"].nunique(), panel["year"].min(), panel["year"].max())
@@ -20,25 +25,29 @@ key_vars = [
     "rd_gdp", "researchers_pm", "articles", "pat_res", "mva_share", "hitech_share",
     "gdppc_ppp", "rtfpna", "ctfp", "rd_ppp", "dln_tfp", "gap",
 ]
-cov = panel.groupby("country_iso3")[key_vars].apply(lambda d: d.notna().sum()).reset_index()
+# Число непустых наблюдений по стране / Non-missing counts by country
+cov = panel.groupby("country_iso3")[key_vars].count().reset_index()
 save_table(cov, "D00_coverage")
 print(cov.set_index("country_iso3")[key_vars].describe().T[["min", "50%", "max"]])
 
 # %%
 miss = panel.set_index(["country_iso3", "year"])[key_vars].isna()
 heat = miss.groupby("country_iso3").mean()
-fig, ax = plt.subplots(figsize=(10, 8))
-im = ax.imshow(heat.values, aspect="auto", cmap="Reds", vmin=0, vmax=1)
+fig, ax = plt.subplots(figsize=FIGSIZE_SQUARE)
+im = ax.imshow(heat.values, aspect="auto", cmap=CMAP_NAVY, vmin=0, vmax=1)
 ax.set_yticks(range(len(heat.index)))
-ax.set_yticklabels(heat.index, fontsize=7)
+ax.set_yticklabels(heat.index, fontsize=8)
 ax.set_xticks(range(len(heat.columns)))
-ax.set_xticklabels(heat.columns, rotation=90, fontsize=8)
-style_axes(ax, title="Доля пропусков по странам и переменным")
-fig.colorbar(im, ax=ax, fraction=0.03)
+ax.set_xticklabels([VAR_LABELS_SHORT.get(c, c) for c in heat.columns], rotation=40, ha="right", fontsize=10)
+style_axes(ax)
+ax.grid(False)
+cbar = fig.colorbar(im, ax=ax, fraction=0.04, pad=0.02)
+cbar.ax.tick_params(labelsize=10, colors=NAVY)
+cbar.outline.set_edgecolor(NAVY)
 save_fig(fig, "D00_missing_heatmap")
 
 # %%
-# Bridge to 20pp 8-country panel (kept under data/deep/legacy; full corpus on report-20pp)
+# Сверка с панелью 8 стран (legacy). / Compare with 8-country legacy panel.
 old = pd.read_csv(ROOT / "data" / "deep" / "legacy" / "core_panel_reviewed.csv")
 old = old[old["country_iso3"].isin(["USA", "CHN", "KOR", "JPN", "DEU", "GBR", "ISR", "FRA"])]
 rename = {

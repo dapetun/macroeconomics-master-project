@@ -1,8 +1,9 @@
-"""Download TOP500 November lists 2010–2025 (resilient)."""
+"""Загрузка списков TOP500 (ноябрь 2010–2025). / Download TOP500 November lists 2010–2025."""
 from __future__ import annotations
 
 import hashlib
 import json
+import sys
 import time
 from datetime import date
 from pathlib import Path
@@ -12,8 +13,10 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "data" / "raw" / "deep" / "top500"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep.paths import RAW_DEEP, ROOT  # noqa: E402
+
+OUT = RAW_DEEP / "top500"
 OUT.mkdir(parents=True, exist_ok=True)
 
 SESSION = requests.Session()
@@ -93,6 +96,7 @@ def main(force: bool = False) -> None:
         "files": files,
         "years_present": sorted(out["list_year"].unique().tolist()),
         "years_missing": missing,
+        "root": str(ROOT),
     }
     (OUT / "manifest.json").write_text(json.dumps(man, indent=2), encoding="utf-8")
     print("wrote", combined, len(out), "missing", missing, flush=True)

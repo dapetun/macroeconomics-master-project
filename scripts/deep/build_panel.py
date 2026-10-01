@@ -1,25 +1,20 @@
-"""Build OECD+China analysis panel from deep raw downloads."""
+"""Сборка панели OECD+Китай из raw. / Build OECD+China panel from raw downloads."""
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep.paths import COUNTRIES, ROOT, YEARS  # noqa: E402
+
 RAW = ROOT / "data" / "raw" / "deep"
 OUT = ROOT / "data" / "deep"
 OUT.mkdir(parents=True, exist_ok=True)
-
-COUNTRIES = [
-    "AUS", "AUT", "BEL", "CAN", "CHL", "COL", "CRI", "CZE", "DNK", "EST",
-    "FIN", "FRA", "DEU", "GRC", "HUN", "ISL", "IRL", "ISR", "ITA", "JPN",
-    "KOR", "LVA", "LTU", "LUX", "MEX", "NLD", "NZL", "NOR", "POL", "PRT",
-    "SVK", "SVN", "ESP", "SWE", "CHE", "TUR", "GBR", "USA", "CHN",
-]
-YEARS = list(range(2000, 2024))
-DELTA = 0.15
+DELTA = 0.15  # амортизация запаса R&D / R&D stock depreciation
 
 
 def wide_from_long(path: Path, value_name: str | None = None) -> pd.DataFrame:

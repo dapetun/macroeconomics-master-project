@@ -1,31 +1,39 @@
 # %% [markdown]
-# D02 — Отклонение США и Китая от нормы для уровня дохода (H1)
+# D02 — Отклонение США и Китая от нормы дохода (H1) / USA–China residual norms (H1)
 
 # %%
 from pathlib import Path
 import sys
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import statsmodels.formula.api as smf
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notebooks" / "deep"))
-from _common import load_panel, save_table, save_fig, style_axes, COLOR_USA, COLOR_CHN
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep import (
+    apply_hse_style,  # noqa: E402
+    load_panel, save_table, save_fig, style_axes,
+    FIGSIZE, FIGSIZE_TALL, INDICATOR_LABELS, GRAY, FOCUS_SERIES,
+    barh_usa_chn,
+)
+
+apply_hse_style()
 
 panel = load_panel()
-indicators = {
-    "rd_gdp": "rd_gdp",
-    "researchers_pm": "researchers_pm",
-    "articles_pm": "articles_pm",
-    "pat_res_pm": "pat_res_pm",
-    "mva_share": "mva_share",
-    "hitech_share": "hitech_share",
-}
+# Показатели профиля H1 / H1 profile indicators
+inds = list(INDICATOR_LABELS.keys())
+labels = [INDICATOR_LABELS[k] for k in inds]
+
 
 # %%
-def residuals_for(k: str, df: pd.DataFrame, exclude_chn: bool = False,
-                  rhs: str = "ln_gdppc + ln_pop + C(year)") -> pd.DataFrame:
+def residuals_for(
+    k: str,
+    df: pd.DataFrame,
+    exclude_chn: bool = False,
+    rhs: str = "ln_gdppc + ln_pop + C(year)",
+) -> pd.DataFrame:
+    """Остатки ln(индикатор) от нормы дохода/размера. / Residuals of ln(indicator) vs income/size norm."""
     d = df.dropna(subset=[k, "ln_gdppc", "ln_pop"]).copy()
     d["ln_gdppc2"] = d["ln_gdppc"] ** 2
     d["lnk"] = np.log(d[k].where(d[k] > 0))
@@ -38,17 +46,12 @@ def residuals_for(k: str, df: pd.DataFrame, exclude_chn: bool = False,
     return d[["country_iso3", "year", "indicator", "resid", "pct_above"]]
 
 
-all_res = []
-for k in indicators:
-    all_res.append(residuals_for(k, panel, exclude_chn=False))
+all_res = [residuals_for(k, panel, exclude_chn=False) for k in inds]
 res_df = pd.concat(all_res, ignore_index=True)
 save_table(res_df, "D02_residuals_all")
 
-# robustness without CHN in training
-all_res_x = []
-for k in indicators:
-    all_res_x.append(residuals_for(k, panel, exclude_chn=True))
-res_x = pd.concat(all_res_x, ignore_index=True)
+# Робастность: норма без Китая в оценке / Robustness: norm estimated without China
+res_x = pd.concat([residuals_for(k, panel, exclude_chn=True) for k in inds], ignore_index=True)
 save_table(res_x, "D02_residuals_norm_without_chn")
 
 # %%
@@ -61,36 +64,29 @@ prof = (
 )
 save_table(prof, "D02_profile_2019_2023")
 
-fig, ax = plt.subplots(figsize=(9, 5))
-inds = list(indicators.keys())
-ypos = np.arange(len(inds))
-w = 0.35
+fig, ax = plt.subplots(figsize=FIGSIZE)
 usa = prof[prof.country_iso3 == "USA"].set_index("indicator").reindex(inds)["pct_above"] * 100
 chn = prof[prof.country_iso3 == "CHN"].set_index("indicator").reindex(inds)["pct_above"] * 100
-ax.barh(ypos - w / 2, usa, w, label="USA", color=COLOR_USA)
-ax.barh(ypos + w / 2, chn, w, label="CHN", color=COLOR_CHN)
-ax.axvline(0, color="black", lw=0.8)
-ax.set_yticks(ypos)
-ax.set_yticklabels(inds)
-style_axes(ax, title="Отклонение от нормы дохода/размера, среднее 2019–2023 (%)", xlabel="% выше/ниже нормы")
+barh_usa_chn(ax, usa, chn, labels)
+style_axes(ax, xlabel="% выше или ниже нормы")
 ax.legend()
 save_fig(fig, "D02_profile_2019_2023")
 
 # %%
-fig, axes = plt.subplots(2, 3, figsize=(12, 6), sharex=True)
+fig, axes = plt.subplots(2, 3, figsize=(6.4, 5.4), sharex=True)
 axes = axes.ravel()
 for i, k in enumerate(inds):
     ax = axes[i]
-    for c, col in [("USA", COLOR_USA), ("CHN", COLOR_CHN)]:
-        s = focus[(focus.country_iso3 == c) & (focus.indicator == k)].sort_values("year")
-        ax.plot(s.year, s.pct_above * 100, color=col, label=c)
-    ax.axhline(0, color="gray", lw=0.7)
-    style_axes(ax, title=k, ylabel="%")
-axes[0].legend(fontsize=8)
-fig.suptitle("Пути отклонения от нормы")
+    for code, col, lab in FOCUS_SERIES:
+        s = focus[(focus.country_iso3 == code) & (focus.indicator == k)].sort_values("year")
+        ax.plot(s.year, s.pct_above * 100, color=col, label=lab)
+    ax.axhline(0, color=GRAY, lw=0.8)
+    style_axes(ax, ylabel=f"{INDICATOR_LABELS[k]}, %")
+axes[0].legend()
 save_fig(fig, "D02_residual_paths")
 
 # %%
+# with_pop совпадает с основной спецификацией выше / with_pop matches the main spec above
 VARIANTS = {
     "with_pop": ("ln_gdppc + ln_pop + C(year)", False),
     "without_pop": ("ln_gdppc + C(year)", False),
@@ -99,26 +95,31 @@ VARIANTS = {
 }
 vrows = []
 for vname, (rhs, excl) in VARIANTS.items():
-    for k in inds:
-        r = residuals_for(k, panel, exclude_chn=excl, rhs=rhs)
-        r = r[r.country_iso3.isin(["USA", "CHN"]) & r.year.between(2019, 2023)]
-        for c, v in r.groupby("country_iso3")["pct_above"].mean().items():
-            vrows.append({"variant": vname, "indicator": k, "country_iso3": c, "pct_above": v})
+    if vname == "with_pop":
+        # Переиспользуем уже посчитанные остатки / Reuse already computed residuals
+        r = res_df
+    else:
+        r = pd.concat(
+            [residuals_for(k, panel, exclude_chn=excl, rhs=rhs) for k in inds],
+            ignore_index=True,
+        )
+    r = r[r.country_iso3.isin(["USA", "CHN"]) & r.year.between(2019, 2023)]
+    for c, v in r.groupby(["country_iso3", "indicator"])["pct_above"].mean().items():
+        country, indicator = c
+        vrows.append({"variant": vname, "indicator": indicator, "country_iso3": country, "pct_above": v})
 variants = pd.DataFrame(vrows)
 save_table(variants, "D02_profile_variants_2019_2023")
 
-fig, axes = plt.subplots(1, 2, figsize=(13, 5), sharey=True)
-for ax, vname, title in [(axes[0], "with_pop", "Норма: доход + население"),
-                         (axes[1], "without_pop", "Норма: только доход")]:
+fig, axes = plt.subplots(2, 1, figsize=FIGSIZE_TALL, sharex=False)
+for ax, vname, title in [
+    (axes[0], "with_pop", "Норма: доход и население"),
+    (axes[1], "without_pop", "Норма: только доход"),
+]:
     sub = variants[variants.variant == vname]
     u = sub[sub.country_iso3 == "USA"].set_index("indicator").reindex(inds)["pct_above"] * 100
     c = sub[sub.country_iso3 == "CHN"].set_index("indicator").reindex(inds)["pct_above"] * 100
-    ax.barh(ypos - w / 2, u, w, label="USA", color=COLOR_USA)
-    ax.barh(ypos + w / 2, c, w, label="CHN", color=COLOR_CHN)
-    ax.axvline(0, color="black", lw=0.8)
-    ax.set_yticks(ypos)
-    ax.set_yticklabels(inds)
-    style_axes(ax, title=title, xlabel="% выше/ниже нормы, среднее 2019–2023")
+    barh_usa_chn(ax, u, c, labels)
+    style_axes(ax, xlabel=f"{title}. % выше или ниже нормы, среднее 2019–2023")
 axes[0].legend()
 save_fig(fig, "D02_profile_with_vs_without_pop")
 
@@ -133,7 +134,7 @@ support = pd.DataFrame([{
 }])
 save_table(support, "D02_support_check")
 
-# quadratic robustness summary
+# Квадрат дохода: сводка коэффициента / Income quadratic: coefficient summary
 rows = []
 for k in inds:
     d = panel.dropna(subset=[k, "ln_gdppc", "ln_pop"]).copy()

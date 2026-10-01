@@ -1,17 +1,17 @@
 # %% [markdown]
-# D11 — Синтез результатов deep-research
+# D11 — Синтез результатов / Synthesis of results
 
 # %%
 from pathlib import Path
-import numpy as np
-import pandas as pd
 import sys
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notebooks" / "deep"))
-from _common import save_table
+import numpy as np
+import pandas as pd
 
-T = ROOT / "results" / "deep" / "tables"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep import TABLES, save_table  # noqa: E402
+
+T = TABLES
 
 # Preserve prediction/type from previous verdicts (do not rewrite hypotheses)
 prev = pd.read_csv(T / "D11_hypothesis_verdicts.csv")

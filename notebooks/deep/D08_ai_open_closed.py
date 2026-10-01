@@ -1,18 +1,24 @@
 # %% [markdown]
 # D08 — ИИ: снимок notable models (без регрессии открытости)
+# AI: Epoch notable-models snapshot (no openness regression)
 
 # %%
 from pathlib import Path
 import sys
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notebooks" / "deep"))
-from _common import save_table, save_fig, style_axes, COLOR_USA, COLOR_CHN
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep import (
+    apply_hse_style,  # noqa: E402
+    RAW_DEEP, save_table, save_fig, style_axes, FIGSIZE, FOCUS_CGROUP, year_ticks,
+)
 
-epoch = pd.read_csv(ROOT / "data" / "raw" / "deep" / "epoch" / "notable_ai_models_latest.csv")
+apply_hse_style()
+
+epoch = pd.read_csv(RAW_DEEP / "epoch" / "notable_ai_models_latest.csv")
 
 # %%
 df = epoch.copy()
@@ -21,9 +27,9 @@ df["year"] = df["date"].dt.year
 df = df[(df["year"] >= 2015) & (df["year"] <= 2025)].copy()
 country = df["Country (of organization)"].fillna("").astype(str)
 
+
 def country_group(s: str) -> str:
     parts = [p.strip() for p in s.split(",") if p.strip()]
-    # collapse duplicates
     uniq = set()
     for p in parts:
         if "United States" in p or p == "USA":
@@ -44,6 +50,7 @@ def country_group(s: str) -> str:
         return "CHN_mixed"
     return "OTHER"
 
+
 df["cgroup"] = country.map(country_group)
 
 OPEN = {
@@ -56,12 +63,6 @@ acc = df["Model accessibility"].astype(str)
 df["open"] = np.where(acc.isin(OPEN), 1, np.where(acc.isin(CLOSED), 0, np.nan))
 df["frontier"] = df.get("Frontier model", pd.Series(index=df.index)).astype(str).str.lower().isin(["true", "yes", "1"])
 df["log_compute"] = np.log10(pd.to_numeric(df["Training compute (FLOP)"], errors="coerce"))
-org = df["Organization categorization"].fillna("").astype(str)
-df["org_type"] = np.where(org.str.contains("Industry") & org.str.contains("Academia"), "mixed",
-                   np.where(org.str.contains("Industry"), "Industry",
-                   np.where(org.str.contains("Academia"), "Academia", "Other")))
-df["domain"] = df["Domain"].fillna("Unknown").astype(str)
-df["organization"] = df["Organization"].fillna("Unknown").astype(str)
 
 # %%
 desc = (
@@ -78,28 +79,21 @@ desc = (
 )
 save_table(desc, "D08_descriptives")
 
-fig, ax = plt.subplots(figsize=(8, 4))
-for g, col, lab in [("USA_only", COLOR_USA, "USA"), ("CHN_only", COLOR_CHN, "CHN")]:
-    s = desc[desc.cgroup == g]
-    ax.plot(s.year, s.open_share * 100, color=col, marker="o", label=lab)
-style_axes(ax, title="Доля открытых весов среди notable models", ylabel="%")
-ax.legend()
-save_fig(fig, "D08_open_share")
+# Три однотипных ряда США/Китай / Three parallel USA/China series
+for ycol, ylabel, fname, scale in [
+    ("open_share", "%", "D08_open_share", 100.0),
+    ("n", "число", "D08_counts_by_country", 1.0),
+    ("max_compute", "log10", "D08_max_compute", 1.0),
+]:
+    fig, ax = plt.subplots(figsize=FIGSIZE)
+    for g, col, lab in FOCUS_CGROUP:
+        s = desc[desc.cgroup == g]
+        ax.plot(s.year, s[ycol] * scale, color=col, marker="o", label=lab)
+    style_axes(ax, ylabel=ylabel)
+    if fname == "D08_open_share":
+        year_ticks(ax, range(int(desc["year"].min()), int(desc["year"].max()) + 1), rotation=28)
+    ax.legend()
+    save_fig(fig, fname)
 
-fig, ax = plt.subplots(figsize=(8, 4))
-for g, col, lab in [("USA_only", COLOR_USA, "USA"), ("CHN_only", COLOR_CHN, "CHN")]:
-    s = desc[desc.cgroup == g]
-    ax.plot(s.year, s.n, color=col, marker="o", label=lab)
-style_axes(ax, title="Число notable models", ylabel="count")
-ax.legend()
-save_fig(fig, "D08_counts_by_country")
-
-fig, ax = plt.subplots(figsize=(8, 4))
-for g, col, lab in [("USA_only", COLOR_USA, "USA"), ("CHN_only", COLOR_CHN, "CHN")]:
-    s = desc[desc.cgroup == g]
-    ax.plot(s.year, s.max_compute, color=col, marker="o", label=lab)
-style_axes(ax, title="Макс. log10(training compute)", ylabel="log10 FLOP")
-ax.legend()
-save_fig(fig, "D08_max_compute")
 print(desc.groupby("cgroup")[["n", "open_share"]].mean())
 print("D08 done")

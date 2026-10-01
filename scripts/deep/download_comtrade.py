@@ -1,8 +1,10 @@
-"""Download UN Comtrade HS8542 / HS8486 / TOTAL for OECD+China (+ Taiwan mirror)."""
+"""Загрузка UN Comtrade HS8542/8486/TOTAL (+ зеркало Тайваня).
+Download UN Comtrade HS8542/8486/TOTAL (+ Taiwan mirror)."""
 from __future__ import annotations
 
 import hashlib
 import json
+import sys
 import time
 from datetime import date
 from pathlib import Path
@@ -10,18 +12,15 @@ from pathlib import Path
 import pandas as pd
 import requests
 
-ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep.paths import COUNTRIES, ROOT  # noqa: E402
+
 OUT = ROOT / "data" / "raw" / "deep" / "comtrade"
 OUT.mkdir(parents=True, exist_ok=True)
 
 BASE = "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
 YEARS = list(range(2010, 2024))
-ISO3 = [
-    "AUS", "AUT", "BEL", "CAN", "CHL", "COL", "CRI", "CZE", "DNK", "EST",
-    "FIN", "FRA", "DEU", "GRC", "HUN", "ISL", "IRL", "ISR", "ITA", "JPN",
-    "KOR", "LVA", "LTU", "LUX", "MEX", "NLD", "NZL", "NOR", "POL", "PRT",
-    "SVK", "SVN", "ESP", "SWE", "CHE", "TUR", "GBR", "USA", "CHN",
-]
+ISO3 = list(COUNTRIES)
 # Extra reporters for Taiwan mirror (imports from partner 490)
 MIRROR_EXTRA = ["HKG", "SGP", "MYS", "VNM", "PHL", "THA", "IND"]
 

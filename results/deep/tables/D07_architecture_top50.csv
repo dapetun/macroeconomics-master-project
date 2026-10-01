@@ -28,147 +28,159 @@ list_year,iso,arch,n
 2011,Switzerland,No_accelerator,1
 2011,USA,No_accelerator,24
 2011,United Kingdom,No_accelerator,1
-2013,Australia,Other_accel,2
-2013,CHN,Other_accel,5
-2013,France,Other_accel,5
-2013,Germany,Other_accel,5
-2013,India,Other_accel,1
-2013,Italy,Other_accel,1
-2013,Japan,Other_accel,5
-2013,Russia,Other_accel,1
-2013,Spain,Other_accel,1
-2013,Switzerland,Other_accel,2
-2013,USA,Other_accel,18
-2013,United Kingdom,Other_accel,4
-2014,Australia,Other_accel,1
-2014,CHN,Other_accel,4
-2014,Finland,Other_accel,1
-2014,France,Other_accel,5
-2014,Germany,Other_accel,4
-2014,Italy,Other_accel,2
-2014,Japan,Other_accel,5
-2014,Netherlands,Other_accel,1
-2014,Russia,Other_accel,1
-2014,Sweden,Other_accel,1
-2014,Switzerland,Other_accel,1
-2014,USA,Other_accel,19
-2014,United Kingdom,Other_accel,5
-2015,CHN,Other_accel,3
-2015,Czech Republic,Other_accel,1
-2015,France,Other_accel,2
-2015,Germany,Other_accel,5
-2015,Italy,Other_accel,2
-2015,Japan,Other_accel,5
-2015,"Korea, South",Other_accel,2
-2015,Poland,Other_accel,1
-2015,Russia,Other_accel,1
-2015,Saudi Arabia,Other_accel,2
-2015,Switzerland,Other_accel,1
-2015,USA,Other_accel,21
-2015,United Kingdom,Other_accel,4
+2013,Australia,No_accelerator,2
+2013,CHN,Intel_Phi,1
+2013,CHN,NVIDIA,3
+2013,CHN,No_accelerator,1
+2013,France,No_accelerator,5
+2013,Germany,NVIDIA,1
+2013,Germany,No_accelerator,4
+2013,India,No_accelerator,1
+2013,Italy,No_accelerator,1
+2013,Japan,NVIDIA,2
+2013,Japan,No_accelerator,3
+2013,Russia,NVIDIA,1
+2013,Spain,No_accelerator,1
+2013,Switzerland,NVIDIA,1
+2013,Switzerland,No_accelerator,1
+2013,USA,Intel_Phi,4
+2013,USA,NVIDIA,1
+2013,USA,No_accelerator,13
+2013,United Kingdom,No_accelerator,4
+2014,Australia,No_accelerator,1
+2014,CHN,Intel_Phi,2
+2014,CHN,NVIDIA,2
+2014,Finland,No_accelerator,1
+2014,France,No_accelerator,5
+2014,Germany,No_accelerator,4
+2014,Italy,NVIDIA,1
+2014,Italy,No_accelerator,1
+2014,Japan,NVIDIA,2
+2014,Japan,No_accelerator,3
+2014,Netherlands,No_accelerator,1
+2014,Russia,NVIDIA,1
+2014,Sweden,No_accelerator,1
+2014,Switzerland,NVIDIA,1
+2014,USA,Intel_Phi,2
+2014,USA,NVIDIA,3
+2014,USA,No_accelerator,14
+2014,United Kingdom,No_accelerator,5
+2015,CHN,Intel_Phi,2
+2015,CHN,NVIDIA,1
+2015,Czech Republic,Intel_Phi,1
+2015,France,No_accelerator,2
+2015,Germany,NVIDIA,1
+2015,Germany,No_accelerator,4
+2015,Italy,NVIDIA,1
+2015,Italy,No_accelerator,1
+2015,Japan,NVIDIA,1
+2015,Japan,No_accelerator,4
+2015,"Korea, South",No_accelerator,2
+2015,Poland,NVIDIA,1
+2015,Russia,NVIDIA,1
+2015,Saudi Arabia,No_accelerator,2
+2015,Switzerland,NVIDIA,1
+2015,USA,Intel_Phi,2
+2015,USA,NVIDIA,4
+2015,USA,No_accelerator,15
+2015,United Kingdom,No_accelerator,4
 2019,Australia,No_accelerator,1
-2019,CHN,Chinese_indigenous,2
-2019,CHN,Other_accel,1
+2019,CHN,Chinese_indigenous,3
 2019,France,Intel_Phi,1
+2019,France,NVIDIA,2
 2019,France,No_accelerator,1
-2019,France,Other_accel,2
 2019,Germany,No_accelerator,5
 2019,Italy,Intel_Phi,1
-2019,Italy,Other_accel,1
+2019,Italy,NVIDIA,1
 2019,Japan,Intel_Phi,1
+2019,Japan,NVIDIA,2
 2019,Japan,No_accelerator,4
-2019,Japan,Other_accel,2
 2019,"Korea, South",Intel_Phi,1
-2019,Russia,Other_accel,1
+2019,Russia,NVIDIA,1
 2019,Saudi Arabia,No_accelerator,1
 2019,Spain,No_accelerator,1
-2019,Switzerland,Other_accel,1
-2019,Taiwan,Other_accel,1
+2019,Switzerland,NVIDIA,1
+2019,Taiwan,NVIDIA,1
 2019,USA,Intel_Phi,4
+2019,USA,NVIDIA,6
 2019,USA,No_accelerator,10
-2019,USA,Other_accel,6
-2019,United Arab Emirates,Other_accel,1
+2019,United Arab Emirates,NVIDIA,1
 2019,United Kingdom,No_accelerator,1
 2022,Australia,AMD,1
-2022,Brazil,AMD,1
-2022,CHN,Chinese_indigenous,1
-2022,CHN,Other_accel,1
+2022,Brazil,NVIDIA,1
+2022,CHN,Chinese_indigenous,2
 2022,Finland,AMD,1
 2022,France,AMD,2
 2022,France,Intel_Phi,1
-2022,France,Other_accel,1
-2022,Germany,AMD,2
+2022,France,NVIDIA,1
+2022,Germany,AMD,1
+2022,Germany,NVIDIA,1
 2022,Germany,No_accelerator,1
-2022,Italy,Other_accel,4
+2022,Italy,NVIDIA,4
+2022,Japan,NVIDIA,1
 2022,Japan,No_accelerator,3
-2022,Japan,Other_accel,1
-2022,Netherlands,AMD,1
-2022,Russia,AMD,4
+2022,Netherlands,NVIDIA,1
+2022,Russia,NVIDIA,4
 2022,Saudi Arabia,AMD,1
-2022,Saudi Arabia,Other_accel,1
-2022,South Korea,AMD,1
+2022,Saudi Arabia,NVIDIA,1
 2022,South Korea,Intel_Phi,1
+2022,South Korea,NVIDIA,1
 2022,South Korea,No_accelerator,2
-2022,Switzerland,Other_accel,1
-2022,USA,AMD,11
+2022,Switzerland,NVIDIA,1
+2022,USA,AMD,2
 2022,USA,Intel_Phi,2
+2022,USA,NVIDIA,12
 2022,USA,No_accelerator,1
-2022,USA,Other_accel,3
 2022,United Kingdom,AMD,1
 2024,Australia,AMD,1
-2024,Austria,AMD,1
-2024,CHN,Chinese_indigenous,1
-2024,CHN,Other_accel,1
-2024,Denmark,Other_accel,1
+2024,Austria,NVIDIA,1
+2024,CHN,Chinese_indigenous,2
+2024,Denmark,NVIDIA,1
 2024,Finland,AMD,1
 2024,France,AMD,1
-2024,France,Other_accel,2
-2024,Germany,AMD,1
-2024,Germany,Other_accel,1
-2024,Israel,Other_accel,1
+2024,France,NVIDIA,2
+2024,Germany,NVIDIA,2
+2024,Israel,NVIDIA,1
 2024,Italy,AMD,1
-2024,Italy,Other_accel,3
-2024,Japan,AMD,1
-2024,Japan,No_accelerator,1
-2024,Japan,Other_accel,4
-2024,Netherlands,Other_accel,1
+2024,Italy,NVIDIA,3
+2024,Japan,NVIDIA,4
+2024,Japan,No_accelerator,2
+2024,Netherlands,NVIDIA,1
 2024,Saudi Arabia,AMD,1
-2024,South Korea,AMD,3
+2024,South Korea,NVIDIA,3
+2024,Spain,NVIDIA,1
 2024,Spain,No_accelerator,1
-2024,Spain,Other_accel,1
 2024,Switzerland,NVIDIA,1
-2024,Taiwan,Other_accel,1
-2024,USA,AMD,11
-2024,USA,NVIDIA,1
+2024,Taiwan,NVIDIA,1
+2024,USA,AMD,6
+2024,USA,NVIDIA,10
 2024,USA,No_accelerator,1
-2024,USA,Other_accel,5
-2024,United Arab Emirates,Other_accel,1
-2025,Brazil,AMD,1
+2024,USA,Other_accel,1
+2024,United Arab Emirates,NVIDIA,1
+2025,Brazil,NVIDIA,1
 2025,CHN,Chinese_indigenous,1
-2025,Denmark,Other_accel,1
+2025,Denmark,NVIDIA,1
 2025,Finland,AMD,1
 2025,France,AMD,1
-2025,France,Other_accel,2
-2025,Germany,AMD,1
-2025,Germany,Other_accel,1
-2025,India,Other_accel,1
-2025,Israel,Other_accel,1
+2025,France,NVIDIA,2
+2025,Germany,NVIDIA,2
+2025,India,NVIDIA,1
+2025,Israel,NVIDIA,1
 2025,Italy,AMD,1
-2025,Italy,Other_accel,1
+2025,Italy,NVIDIA,1
+2025,Japan,NVIDIA,7
 2025,Japan,No_accelerator,1
-2025,Japan,Other_accel,7
-2025,Netherlands,Other_accel,2
+2025,Netherlands,NVIDIA,2
 2025,Saudi Arabia,NVIDIA,1
-2025,South Korea,Other_accel,1
+2025,South Korea,NVIDIA,1
+2025,Spain,NVIDIA,1
 2025,Spain,No_accelerator,1
-2025,Spain,Other_accel,1
 2025,Switzerland,NVIDIA,1
-2025,Taiwan,Other_accel,2
-2025,USA,AMD,7
-2025,USA,NVIDIA,2
-2025,USA,Other_accel,6
+2025,Taiwan,NVIDIA,2
+2025,USA,AMD,6
+2025,USA,NVIDIA,8
+2025,USA,Other_accel,1
 2025,United Arab Emirates,AMD,1
-2025,United Arab Emirates,Other_accel,1
-2025,United Kingdom,NVIDIA,1
-2025,United Kingdom,Other_accel,1
-2025,Vietnam,Other_accel,1
+2025,United Arab Emirates,NVIDIA,1
+2025,United Kingdom,NVIDIA,2
+2025,Vietnam,NVIDIA,1

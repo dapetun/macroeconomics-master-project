@@ -1,27 +1,23 @@
 # %% [markdown]
-# D01 — Лестница спецификаций для роста TFP
+# D01 — Лестница спецификаций для роста TFP / Specification ladder for TFP growth
 #
-# Зависимая переменная — рост TFP (`dln_tfp` из `rtfpna`).
-# `ctfp` здесь не оценивается: это уровень относительно США, а не рост внутри страны.
+# Y = рост TFP (`dln_tfp` из `rtfpna`). / Y = TFP growth (`dln_tfp` from `rtfpna`).
+# `ctfp` не оценивается: уровень к США, не рост. / `ctfp` is a level vs USA, not growth.
 
 # %%
 from pathlib import Path
 import sys
-import pandas as pd
-import statsmodels.formula.api as smf
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notebooks" / "deep"))
-from _common import load_panel, save_table, twfe
+import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from macrodeep import load_panel, save_table, twfe, ols_cluster  # noqa: E402
 
 # %%
-panel = load_panel().copy()
-panel = panel.dropna(subset=["dln_tfp", "rd_gdp_lag1"]).copy()
+panel = load_panel().dropna(subset=["dln_tfp", "rd_gdp_lag1"]).copy()
 ladder_rows = []
 
-r3 = smf.ols("dln_tfp ~ rd_gdp_lag1", data=panel).fit(
-    cov_type="cluster", cov_kwds={"groups": panel["country_iso3"]}
-)
+r3 = ols_cluster(panel, "dln_tfp ~ rd_gdp_lag1")
 ladder_rows.append({
     "spec": "3_pooled_dln_tfp",
     "y": "dln_tfp",
@@ -32,9 +28,7 @@ ladder_rows.append({
     "G": int(panel["country_iso3"].nunique()),
 })
 
-r4 = smf.ols("dln_tfp ~ rd_gdp_lag1 + C(country_iso3)", data=panel).fit(
-    cov_type="cluster", cov_kwds={"groups": panel["country_iso3"]}
-)
+r4 = ols_cluster(panel, "dln_tfp ~ rd_gdp_lag1 + C(country_iso3)")
 ladder_rows.append({
     "spec": "4_country_FE",
     "y": "dln_tfp",
