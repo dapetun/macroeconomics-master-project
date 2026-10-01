@@ -1,6 +1,5 @@
-﻿# Runtime for analysis + download scripts (pin for reproducibility).
-# Package core also declared in pyproject.toml; install both:
-#   pip install -r requirements-deep.txt && pip install -e .
+﻿# Зависимости пайплайна и download-скриптов.
+# Установка: pip install -r requirements-deep.txt && pip install -e .
 ipykernel==7.1.0
 jupytext==1.19.5
 matplotlib==3.11.1
@@ -14,5 +13,3 @@ requests==2.32.5
 scipy==1.18.0
 statsmodels==0.15.0
 xlrd==2.0.2
-# scikit-learn removed: no imports in project code (fixes audit 2026-10-01).
-# linearmodels removed: no imports in project code (audit 2026-10-01).
